@@ -196,7 +196,7 @@
 							<height>105</height>
 							<align>center</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label>
+							<label>[B][COLOR yellow]$INFO[ListItem.Label][/COLOR][/B]</label>
 							<autoscroll time="3000" delay="3000" repeat="3000">True</autoscroll>
 						</control>
 						<control type="group">
