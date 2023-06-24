@@ -55,45 +55,50 @@
 						<pagecontrol>27099</pagecontrol>
 						<include content="WidgetListPoster" condition="Skin.HasSetting(MovieResults)">
               <param name="content_path" value="plugin://plugin.video.fen/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
-              <param name="widget_header" value="Movies"/>
-              <!-- <param name="widget_header" value="$LOCALIZE[342]"/> -->
+              <!-- <param name="widget_header" value="Movies"/> -->
+              <param name="widget_header" value="$LOCALIZE[342]"/>
               <param name="widget_target" value="videos"/>
               <param name="list_id" value="27011"/>
             </include>
             <include content="WidgetListPoster" condition="Skin.HasSetting(TVShowResults)">
               <param name="content_path" value="plugin://plugin.video.fen/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
-              <param name="widget_header" value="TV Shows"/>
-              <!-- <param name="widget_header" value="$LOCALIZE[20343]"/> -->
+               <!-- <param name="widget_header" value="TV Shows"/> -->
+              <param name="widget_header" value="$LOCALIZE[20343]"/>
               <param name="widget_target" value="videos"/>
               <param name="list_id" value="27012"/>
             </include>
             <include content="WidgetListPoster" condition="Skin.HasSetting(CollectionsResults)">
               <param name="content_path" value="plugin://plugin.video.fen/?mode=build_movie_list&amp;action=tmdb_movies_search_sets&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
-              <param name="widget_header" value="Collections"/>
+              <!-- <param name="widget_header" value="Collections"/> -->
+              <param name="widget_header" value="[B]$LOCALIZE[700021][/B]"/>
               <param name="widget_target" value="videos"/>
               <param name="list_id" value="27013"/>
             </include>
             <include content="WidgetListPoster" condition="Skin.HasSetting(PeopleResults)">
               <param name="content_path" value="plugin://plugin.video.fen/?mode=person_direct.search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
-              <param name="widget_header" value="Actors/Actresses"/>
+              <!-- <param name="widget_header" value="Actors/Actresses"/> -->
+              <param name="widget_header" value="[B]$LOCALIZE[700022][/B]"/>
               <param name="widget_target" value="videos"/>
               <param name="list_id" value="27014"/>
             </include>
             <include content="WidgetListPoster" condition="Skin.HasSetting(MovieKeywordResults)">
 							<param name="content_path" value="plugin://plugin.video.fen/?mode=build_movie_list&amp;action=imdb_keywords_list_contents&amp;list_id=$INFO[Skin.String(SearchInputEncoded)]"/>
-              <param name="widget_header" value="IMDb Keywords (Movies)"/>
+              <!-- <param name="widget_header" value="IMDb Keywords (Movies)"/> -->
+              <param name="widget_header" value="[B]$LOCALIZE[700023][/B]"/>
               <param name="widget_target" value="videos"/>
               <param name="list_id" value="27015"/>
             </include>
             <include content="WidgetListPoster" condition="Skin.HasSetting(TVShowKeywordResults)">
 							<param name="content_path" value="plugin://plugin.video.fen/?mode=build_tvshow_list&amp;action=imdb_keywords_list_contents&amp;list_id=$INFO[Skin.String(SearchInputEncoded)]"/>
-              <param name="widget_header" value="IMDb Keywords (TV Shows)"/>
+              <!-- <param name="widget_header" value="IMDb Keywords (TV Shows)"/> -->
+              <param name="widget_header" value="[B]$LOCALIZE[700024][/B]"/>
               <param name="widget_target" value="videos"/>
               <param name="list_id" value="27016"/>
             </include>
 						<include content="WidgetListItems" condition="Skin.HasSetting(TraktResults)">
               <param name="content_path" value="plugin://plugin.video.fen/?mode=trakt.list.search_trakt_lists&amp;query=$INFO[Skin.String(SearchInputTraktEncoded)]"/>
-              <param name="widget_header" value="TRAKT Lists"/>
+              <!-- <param name="widget_header" value="TRAKT Lists"/> -->
+              <param name="widget_header" value="[B]$LOCALIZE[700025][/B]"/>
               <param name="widget_target" value="videos"/>
               <param name="list_id" value="27017"/>
             </include>
@@ -329,12 +334,12 @@
 				<left>90</left>
 				<control type="label">
 					<top>90</top>
-					<left>-45</left>
-					<width>1085</width>
+					<left>0</left>
+					<width>390</width>
 					<aligny>center</aligny>
 					<height>98</height>
 					<font>font36_title</font>
-					<label>Recent searches</label>
+					<label>$LOCALIZE[700019]</label>
 				</control>
 			</control>
 
@@ -345,14 +350,25 @@
 				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 				<control type="label">
-				<visible>!String.IsEmpty(Skin.String(SearchInput)) + String.IsEmpty(Skin.String(DatabaseStatus))</visible>
+				<visible>!String.IsEmpty(Skin.String(SearchInput)) + String.IsEmpty(Skin.String(DatabaseStatus)) + !String.IsEqual(System.Language,Hebrew)</visible>
 					<top>-5</top>
 					<left>525</left>
 					<width>1085</width>
 					<aligny>center</aligny>
 					<height>98</height>
 					<font>font37</font>
-					<label>Search results for: [COLOR button_focus][B]$INFO[Skin.String(SearchInput)][/B][/COLOR]</label>
+					<label>$LOCALIZE[700020]: [COLOR button_focus][B]$INFO[Skin.String(SearchInput)][/B][/COLOR]</label>
+				</control>
+				<control type="label">
+				<visible>!String.IsEmpty(Skin.String(SearchInput)) + String.IsEmpty(Skin.String(DatabaseStatus)) + String.IsEqual(System.Language,Hebrew)</visible>
+					<top>-5</top>
+					<left>525</left>
+					<width>1085</width>
+					<aligny>center</aligny>
+					<height>98</height>
+					<font>font37</font>
+					<label>$LOCALIZE[700020]: [COLOR button_focus][B]$INFO[Skin.String(SearchInput)][/B][/COLOR]</label>
+					<align>right</align>
 				</control>
 				<control type="label">
 				<visible>String.IsEmpty(Skin.String(SearchInput)) + String.IsEmpty(Skin.String(DatabaseStatus))</visible>
