@@ -992,7 +992,7 @@
 						<aligny>center</aligny>
 						<height>98</height>
 						<font>font36_title</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>[COLOR yellow]$INFO[ListItem.Label][/COLOR]</label>
 						<visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
 					</control>
 					<control type="textbox">
@@ -1004,7 +1004,7 @@
 						<height>98</height>
 						<font>font36_title</font>
 						<align>right</align>
-						<label>$INFO[ListItem.Label]</label>
+						<label>[COLOR yellow]$INFO[ListItem.Label][/COLOR]</label>
 						<visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
 					</control>
 					<control type="textbox">
