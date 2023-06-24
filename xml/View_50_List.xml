@@ -349,13 +349,26 @@
 						<label>$VAR[InfoPanelEpisode]</label>
 					</control>
 					<control type="textbox">
+						<visible>!String.IsEqual(System.Language,Hebrew)</visible>
 						<top>418</top>
 						<width>550</width>
 						<aligny>center</aligny>
 						<height>110</height>
 						<bottom>70</bottom>
 						<font>font36_title</font>
-						<label>Season $INFO[ListItem.Season], Episode $INFO[ListItem.Episode]</label>
+						<label>$LOCALIZE[700015] $INFO[ListItem.Season], $LOCALIZE[700016] $INFO[ListItem.Episode]</label>
+						<visible>String.IsEqual(ListItem.DbType,episode)</visible>
+					</control>
+					<control type="textbox">
+						<visible>String.IsEqual(System.Language,Hebrew)</visible>
+						<top>418</top>
+						<width>550</width>
+						<aligny>center</aligny>
+						<height>110</height>
+						<bottom>70</bottom>
+						<align>right</align>
+						<font>font36_title</font>
+						<label>$LOCALIZE[700015] $INFO[ListItem.Season], $LOCALIZE[700016] $INFO[ListItem.Episode]</label>
 						<visible>String.IsEqual(ListItem.DbType,episode)</visible>
 					</control>
 					<control type="textbox" id="15503">
