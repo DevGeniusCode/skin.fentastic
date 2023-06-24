@@ -24,6 +24,16 @@
 				<texture colordiffuse="button_focus2">dialogs/dialog-bg-nobo.png</texture>
 				<visible>Control.IsVisible(51)</visible>
 			</control>
+				
+				<include content="ClearlogoArt">
+					<param name="top">-165</param>
+					<param name="left">45%</param>
+					<param name="visible">Control.IsVisible(51)</param>
+				</include>	
+				
+
+				
+			
 			<control type="group">
 				<visible>Control.IsVisible(51)</visible>
 				<include>Visible_Right</include>
@@ -106,12 +116,13 @@
 						<height>40</height>
 						<label>$INFO[ListItem.Label]$VAR[ListSubLabelVar]</label>
 						<font>font45_title</font>
+						<textcolor>yellow</textcolor>
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 					<control type="textbox">
 						<left>645</left>
-						<top>402</top>
-						<height>335</height>
+						<top>440</top>
+						<height>250</height>
 						<right>115</right>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasActiveModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 						<label>$VAR[PlotTextBoxVar]</label>
@@ -165,7 +176,8 @@
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
 					<align>right</align>
-					<visible>String.IsEqual(ListItem.DBtype,movie) + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(WatchedProgress)) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)</visible>
+					<visible>!Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)</visible>
+					<visible>Container.Content(movies)</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
 				<control type="group">
@@ -191,7 +203,7 @@
 					<top>690</top>
 					<width>435</width>
 					<height>24</height>
-					<label>$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</label>
+					<label>$INFO[ListItem.Property(TotalSeasons)] $VAR[SeasonCorrectLabel] / $INFO[ListItem.Property(TotalEpisodes)] $LOCALIZE[7000161] </label>
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
 					<align>right</align>
@@ -227,5 +239,23 @@
 				<texture border="8" colordiffuse="button_focus2">buttons/thumbnail_focused.png</texture>
 			</control>
 		</control>
+	</include>
+	
+	<include name="ClearlogoArt">
+	<param name="top" default="-105"/>
+	<param name="left" default="50%"/>
+		<definition>
+			<control type="group">
+				<visible>$PARAM[visible]</visible>
+				<control type="image">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>300</width>
+					<height>100</height>
+					<aspectratio scalediffuse="false" align="left" aligny="center">keep</aspectratio>
+					<texture>$VAR[clearartlogo]</texture>
+				</control>
+			</control>
+		</definition>
 	</include>
 </includes>
