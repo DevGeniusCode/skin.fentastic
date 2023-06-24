@@ -244,35 +244,35 @@
 					<visible>!Skin.HasSetting(NoSearchResultsWindow)</visible>
 				</control>
 				<control type="radiobutton" id="6383">
-					<label>   - Collections</label>
+					<label>   - [B]$LOCALIZE[700021][/B]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(CollectionsResults)</onclick>
 					<selected>Skin.HasSetting(CollectionsResults)</selected>
 					<visible>!Skin.HasSetting(NoSearchResultsWindow)</visible>
 				</control>
 				<control type="radiobutton" id="6384">
-					<label>   - Actors/Actresses</label>
+					<label>   - [B]$LOCALIZE[700022][/B]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(PeopleResults)</onclick>
 					<selected>Skin.HasSetting(PeopleResults)</selected>
 					<visible>!Skin.HasSetting(NoSearchResultsWindow)</visible>
 				</control>
 				<control type="radiobutton" id="6385">
-					<label>   - IMDb Keywords (Movies)</label>
+					<label>   - [B]$LOCALIZE[700023][/B]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(MovieKeywordResults)</onclick>
 					<selected>Skin.HasSetting(MovieKeywordResults)</selected>
 					<visible>!Skin.HasSetting(NoSearchResultsWindow)</visible>
 				</control>
 				<control type="radiobutton" id="6386">
-					<label>   - IMDb Keywords (TV Shows)</label>
+					<label>   - [B]$LOCALIZE[700024][/B]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(TVShowKeywordResults)</onclick>
 					<selected>Skin.HasSetting(TVShowKeywordResults)</selected>
 					<visible>!Skin.HasSetting(NoSearchResultsWindow)</visible>
 				</control>
 				<control type="radiobutton" id="6387">
-					<label>   - TRAKT Lists (requires TRAKT account, configure in FEN settings)</label>
+					<label>   - [B]$LOCALIZE[700025][/B]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(TraktResults)</onclick>
 					<selected>Skin.HasSetting(TraktResults)</selected>
