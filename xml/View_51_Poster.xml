@@ -26,8 +26,8 @@
 			</control>
 				
 				<include content="ClearlogoArt">
-					<param name="top">-165</param>
-					<param name="left">45%</param>
+					<param name="top">-150</param>
+					<param name="left">42%</param>
 					<param name="visible">Control.IsVisible(51)</param>
 				</include>	
 				
@@ -250,8 +250,8 @@
 				<control type="image">
 					<top>$PARAM[top]</top>
 					<left>$PARAM[left]</left>
-					<width>300</width>
-					<height>100</height>
+					<width>320</width>
+					<height>130</height>
 					<aspectratio scalediffuse="false" align="left" aligny="center">keep</aspectratio>
 					<texture>$VAR[clearartlogo]</texture>
 				</control>
