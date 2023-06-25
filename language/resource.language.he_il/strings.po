@@ -838,7 +838,6 @@ msgctxt "#7000161"
 msgid "Episodes"
 msgstr "פרקים"
 
-
 # Power Button - DialogButtonMenu.xml:
 
 msgctxt "#700017"
