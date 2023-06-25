@@ -241,7 +241,7 @@
 				<control type="grouplist">
 					<left>0</left>
 					<centertop>20</centertop>
-					<width>850</width>
+					<width>1200</width>
 					<height>50</height>
 					<align>left</align>
 					<include>Animation_BottomSlide</include>

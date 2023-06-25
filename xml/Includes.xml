@@ -429,13 +429,29 @@
 				<width>1920</width>
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="group">
+				<include content="SetSlideAnimation">
+				<param name="setproperty">Container.Content(seasons) | Container.Content(episodes)</param>
+				<param name="end">650</param>
+				</include>
+				<include content="SetSlideAnimation">
+				<param name="setproperty">Container.Content(episodes)</param>
+				<param name="end">550</param>
+				</include>
 					<width>150</width>
 					<visible>System.AddonIsEnabled(resource.images.studios.white) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio)</visible>
 					<include content="MediaFlag">
-						<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]" />
+					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]" />
 					</include>
 				</control>
 				<control type="group">
+				<include content="SetSlideAnimation">
+				<param name="setproperty">Container.Content(seasons)</param>
+				<param name="end">650</param>
+				</include>
+				<include content="SetSlideAnimation">
+				<param name="setproperty">Container.Content(episodes)</param>
+				<param name="end">535</param>
+				</include>
 					<top>10</top>
 					<width>260</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.RatingAndVotes) + $EXP[HomeScreenOff]</visible>
@@ -448,6 +464,14 @@
 					</include>
 				</control>
 				<control type="group">
+				<include content="SetSlideAnimation">
+				<param name="setproperty">Container.Content(seasons)</param>
+				<param name="end">650</param>
+				</include>
+				<include content="SetSlideAnimation">
+				<param name="setproperty">Container.Content(episodes)</param>
+				<param name="end">535</param>
+				</include>
 					<top>10</top>
 					<width>180</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Premiered) + $EXP[HomeScreenOff]</visible>
@@ -459,6 +483,14 @@
 					</include>
 				</control>
 				<control type="group">
+				<include content="SetSlideAnimation">
+				<param name="setproperty">Container.Content(seasons)</param>
+				<param name="end">650</param>
+				</include>
+				<include content="SetSlideAnimation">
+				<param name="setproperty">Container.Content(episodes)</param>
+				<param name="end">535</param>
+				</include>
 					<top>10</top>
 					<width>150</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Duration) + $EXP[HomeScreenOff]</visible>
@@ -468,7 +500,15 @@
 						<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Duration(hh:mm:ss)]" />
 					</include>
 				</control>
-					<control type="group">
+				<control type="group">
+				<include content="SetSlideAnimation">
+				<param name="setproperty">Container.Content(seasons)</param>
+				<param name="end">650</param>
+				</include>
+				<include content="SetSlideAnimation">
+				<param name="setproperty">Container.Content(episodes)</param>
+				<param name="end">535</param>
+				</include>
 					<top>10</top>
 					<width>180</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio) + $EXP[HomeScreenOff]</visible>
