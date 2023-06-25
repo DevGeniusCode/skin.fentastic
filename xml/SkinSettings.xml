@@ -88,6 +88,25 @@
 					<onclick>Skin.ToggleSetting(HomeMenuNoTVShowsCategories)</onclick>
 					<visible>!Skin.HasSetting(HomeMenuNoTVShowsButton)</visible>
 				</control> -->
+				<!-- IDAN PLUS -->
+				<control type="radiobutton" id="6270">
+				<label>$INFO[Skin.String(MenuIdanPlusLabel)]</label>
+				<include>DefaultSettingButton</include>
+				<selected>!Skin.HasSetting(HomeMenuNoIdanPlusButton)</selected>
+				<onclick>Skin.ToggleSetting(HomeMenuNoIdanPlusButton)</onclick>
+				</control>
+				<control type="button" id="6271">
+				<label>   - Set main menu path</label>
+				<include>DefaultSettingButton</include>
+				<onclick>RunScript(script.fentastic.helper,mode=manage_main_menu_path&amp;cpath_setting=idanplus.main_menu)</onclick>
+				<visible>!Skin.HasSetting(HomeMenuNoIdanPlusButton)</visible>
+				</control>
+				<control type="button" id="6272">
+				<label>   - Set widgets</label>
+				<include>DefaultSettingButton</include>
+				<onclick>RunScript(script.fentastic.helper,mode=manage_widgets&amp;cpath_setting=idanplus.widget)</onclick>
+				<visible>!Skin.HasSetting(HomeMenuNoIdanPlusButton)</visible>
+				</control>
 				<!-- MUSIC -->
 				<control type="radiobutton" id="6252">
 					<label>$LOCALIZE[31008]</label>

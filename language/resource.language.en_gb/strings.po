@@ -1060,4 +1060,10 @@ msgctxt "#700025"
 msgid "TRAKT Lists"
 msgstr ""
 
+# FENtastic Idan Plus Widgets Menu - script.fentastic.helper - cpath_maker.py
+
+msgctxt "#700026"
+msgid "[B]Idan Plus[/B]"
+msgstr ""
+
 ################################################################

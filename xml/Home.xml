@@ -78,6 +78,21 @@
 						<param name="scrollbar_id" value="22099"/>
 					</include>
 				</control>
+				<!-- IDAN PLUS -->
+				<control type="group" id="25000">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),idanplus)</visible>
+					<include content="Visible_Right_Delayed">
+						<param name="id" value="idanplus"/>
+					</include>
+					<control type="grouplist" id="25001">
+						<include>WidgetGroupListCommon</include>
+						<pagecontrol>22099</pagecontrol>
+						<include content="IdanPlusWidgets" condition="!Skin.HasSetting(HomeMenuNoIdanPlusButton)" />
+					</control>
+					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+						<param name="scrollbar_id" value="25099"/>
+					</include>
+				</control>				
 				<control type="group" id="7000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
 					<include content="Visible_Right_Delayed">
@@ -828,6 +843,8 @@
 							<include content="MoviesMainMenu" condition="!Skin.HasSetting(HomeMenuNoMoviesButton)" />
 							<!-- TVSHOWS 22000 -->
 							<include content="TVShowsMainMenu" condition="!Skin.HasSetting(HomeMenuNoTVShowsButton)" />
+							<!-- IDAN PLUS 25000 -->
+							<include content="IdanPlusMainMenu" condition="!Skin.HasSetting(HomeMenuNoIdanPlusButton)" />
 							<item>
 								<label>$LOCALIZE[2]</label>
 								<onclick>ActivateWindow(Music,root,return)</onclick>
