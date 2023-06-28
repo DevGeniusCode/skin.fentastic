@@ -884,4 +884,26 @@ msgctxt "#700026"
 msgid "[B]Idan Plus[/B]"
 msgstr "[B]עידן פלוס[/B]"
 
+# Continue InfoPanel - Status Label Hebrew Translation For TV Shows
+
+msgctxt "#700027"
+msgid "Returning Series"
+msgstr "משודרת"
+
+msgctxt "#700028"
+msgid "In Production"
+msgstr "בהפקה"
+
+msgctxt "#700029"
+msgid "Planned"
+msgstr "בתכנון"
+
+msgctxt "#700030"
+msgid "Cancelled"
+msgstr "בוטלה"
+
+msgctxt "#700031"
+msgid "Ended"
+msgstr "הסתיימה"
+
 ################################################################
