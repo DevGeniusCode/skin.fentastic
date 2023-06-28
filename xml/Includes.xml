@@ -51,9 +51,12 @@
 	<constant name="list_bottom_offset">70</constant>
 	<constant name="list_top_offset">110</constant>
 	<constant name="list_item_height">75</constant>
+	<constant name="PadLeft">650</constant>
+	<constant name="PadfixLeft">550</constant>
+	<constant name="GlobalPadfixLeft">535</constant>
 	<expression name="infodialog_active">Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-embuary-video.xml) | Window.IsVisible(script-embuary-person.xml) | Window.IsVisible(script-embuary-image.xml)</expression>
 	<expression name="sidebar_visible">ControlGroup(9000).HasFocus | Control.HasFocus(6130) | Control.HasFocus(6131)</expression>
-	<expression name="HomeScreenOff">!Window.IsActive(home)</expression>
+	<expression name="HomeScreenOff">![Window.IsActive(home) | Control.IsVisible(50) | Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(504)]</expression>
 	<include name="CommonScrollbars">
 		<param name="bottom_offset">list_bottom_offset</param>
 		<definition>
@@ -457,6 +460,7 @@
 					<top>10</top>
 					<width>260</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.RatingAndVotes) + $EXP[HomeScreenOff]</visible>
+					<include>pre_fix_setview_flags</include>
 					<include content="InfoFlag">
 						<param name="imagesize">70</param>
 						<param name="imagetop">-20</param>
@@ -477,6 +481,7 @@
 					<top>10</top>
 					<width>180</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Premiered) + $EXP[HomeScreenOff]</visible>
+					<include>pre_fix_setview_flags</include>
 					<include content="InfoFlag">
 						<param name="imagesize">30</param>
 						<param name="imagetop">0</param>
@@ -496,6 +501,7 @@
 					<top>10</top>
 					<width>150</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Duration) + $EXP[HomeScreenOff]</visible>
+					<include>pre_fix_setview_flags</include>
 					<include content="InfoFlag">
 						<param name="labelleft">45</param>
 						<param name="icon" value="kodirdil/poster_view_icons/clock.png" />
@@ -514,6 +520,7 @@
 					<top>10</top>
 					<width>180</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio) + $EXP[HomeScreenOff]</visible>
+					<include>pre_fix_setview_flags</include>
 					<include content="InfoFlag">
 						<param name="icon" value="kodirdil/poster_view_icons/network.png" />
 						<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio]" />
@@ -567,6 +574,23 @@
 			</control>
 		</control>
 	</include>
+	
+	<include name="pre_fix_setview_flags">
+			<include content="preFix_Flags_Positions">
+			<param name="condition">Control.IsVisible(55)</param>
+			<param name="end">GlobalPadfixLeft</param>
+		</include>
+	
+		<include content="preFix_Flags_Positions">
+			<param name="condition">Container.Content(seasons) | Control.IsVisible(502)</param>
+			<param name="end">PadLeft</param>
+		</include>
+		<include content="preFix_Flags_Positions">
+			<param name="condition">Container.Content(episodes)</param>
+			<param name="end">PadFixLeft</param>
+		</include>
+	</include>
+	
 	<include name="WeatherIconMyWeather">
 		<control type="group">
 			<width>268</width>

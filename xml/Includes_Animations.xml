@@ -143,4 +143,8 @@
 	</definition>
 	</include>
 	
+	<include name="preFix_Flags_Positions">
+			<animation condition="$PARAM[condition]" effect="slide" start="0" end="$PARAM[end]" time="0">Conditional</animation>
+	</include>
+	
 </includes>
