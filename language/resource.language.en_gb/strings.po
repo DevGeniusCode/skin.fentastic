@@ -1066,7 +1066,7 @@ msgctxt "#700026"
 msgid "[B]Idan Plus[/B]"
 msgstr ""
 
-# Continue InfoPanel - Status Label Hebrew Translation For TV Shows
+# Continue InfoPanel - Status Label Hebrew Translation For TV Shows - Variables.xml
 
 msgctxt "#700027"
 msgid "Returning Series"
@@ -1086,6 +1086,24 @@ msgstr ""
 
 msgctxt "#700031"
 msgid "Ended"
+msgstr ""
+
+# DialogSeekVideoOSD in Player - VideoOSD.XML
+
+msgctxt "#700032"
+msgid "Show Seek Steps Window"
+msgstr ""
+
+msgctxt "#700033"
+msgid "Forward Seek Steps"
+msgstr ""
+
+msgctxt "#700034"
+msgid "Rewind Seek Steps"
+msgstr ""
+
+msgctxt "#700035"
+msgid "Mins"
 msgstr ""
 
 ################################################################
