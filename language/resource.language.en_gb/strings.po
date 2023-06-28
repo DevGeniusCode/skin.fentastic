@@ -1106,4 +1106,18 @@ msgctxt "#700035"
 msgid "Mins"
 msgstr ""
 
+# Zoom Toggle Buttons in Player - VideoOSD.XML
+
+msgctxt "#700036"
+msgid "Show Zoom Toggle Buttons"
+msgstr ""
+
+msgctxt "#700037"
+msgid "IN"
+msgstr ""
+
+msgctxt "#700038"
+msgid "OUT"
+msgstr ""
+
 ################################################################

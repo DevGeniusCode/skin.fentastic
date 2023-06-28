@@ -203,6 +203,24 @@
 					<ondown>noop</ondown>
 					<onleft>70048</onleft>
 					<onright>804</onright>
+					<control type="radiobutton" id="598">
+					<visible>$EXP[SkinZoomToggle]</visible>
+						<include content="OSDButtonAdvanced">
+							<param name="texture" value="kodirdil/zoom/minus-5-xxl.png"/>
+							<param name="textoffsetx">15</param>
+							<param name="label">$LOCALIZE[700038]</param>
+						</include>
+						<include condition="$EXP[LiveTvCondition]">Out</include>
+					</control>
+					<control type="radiobutton" id="599">
+						<visible>$EXP[SkinZoomToggle]</visible>
+						<include content="OSDButtonAdvanced">
+							<param name="label">$LOCALIZE[700037]</param>
+							<param name="textoffsetx">22</param>
+							<param name="texture" value="kodirdil/zoom/plus-5-xxl.png"/>
+						</include>
+						<include condition="$EXP[LiveTvCondition]">In</include>
+					</control>
 					<control type="radiobutton" id="600">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/previous.png"/>

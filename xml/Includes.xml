@@ -57,6 +57,8 @@
 	<expression name="infodialog_active">Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-embuary-video.xml) | Window.IsVisible(script-embuary-person.xml) | Window.IsVisible(script-embuary-image.xml)</expression>
 	<expression name="sidebar_visible">ControlGroup(9000).HasFocus | Control.HasFocus(6130) | Control.HasFocus(6131)</expression>
 	<expression name="HomeScreenOff">![Window.IsActive(home) | Control.IsVisible(50) | Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(504)]</expression>
+	<expression name="SkinZoomToggle">Skin.HasSetting(ZoomToggle)</expression>
+	<expression name="LiveTvCondition">!VideoPlayer.Content(livetv)</expression>
 	<include name="CommonScrollbars">
 		<param name="bottom_offset">list_bottom_offset</param>
 		<definition>
@@ -1931,5 +1933,13 @@
 		<onback>201</onback>
 		<orientation>horizontal</orientation>
 	</include>
-	
+
+	<include name="Out">
+		<onclick>ZoomOut</onclick>
+	</include>
+
+	<include name="In">
+		<onclick>ZoomIn</onclick>
+	</include>
+
 </includes>
