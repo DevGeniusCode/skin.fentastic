@@ -8,9 +8,9 @@
 		<radioposx>370</radioposx>
 		<aligny>center</aligny>
 		<invalidcolor>invalid</invalidcolor>
-		<texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
+		<texturefocus colordiffuse="button_focus">masks/focus.png</texturefocus>
 		<texturenofocus />
-		<alttexturefocus colordiffuse="button_focus">lists/focus.png</alttexturefocus>
+		<alttexturefocus colordiffuse="button_focus">masks/focus.png</alttexturefocus>
 		<alttexturenofocus></alttexturenofocus>
 	</include>
 	<include name="PVRQuickNavItemsCommon">
@@ -280,7 +280,7 @@
 			<top>0</top>
 			<width>520</width>
 			<height>100%</height>
-			<texture colordiffuse="button_focus" border="0,0,52,0">lists/panel-mediamenu.png</texture>
+			<texture colordiffuse="button_focus" border="0,0,52,0">lists/contentpanel-fade.png</texture>
 		</control>
 		<control type="button" id="6131">
 			<left>0</left>
