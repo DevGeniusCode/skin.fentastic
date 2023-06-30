@@ -54,49 +54,49 @@
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>27099</pagecontrol>
 						<include content="WidgetListPoster" condition="Skin.HasSetting(MovieResults)">
-              <param name="content_path" value="plugin://plugin.video.fen/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+              <param name="content_path" value="plugin://plugin.video.twilight/?mode=build_movie_list&amp;action=tmdb_movies_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
               <!-- <param name="widget_header" value="Movies"/> -->
               <param name="widget_header" value="$LOCALIZE[342]"/>
               <param name="widget_target" value="videos"/>
               <param name="list_id" value="27011"/>
             </include>
             <include content="WidgetListPoster" condition="Skin.HasSetting(TVShowResults)">
-              <param name="content_path" value="plugin://plugin.video.fen/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+              <param name="content_path" value="plugin://plugin.video.twilight/?mode=build_tvshow_list&amp;action=tmdb_tv_search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
                <!-- <param name="widget_header" value="TV Shows"/> -->
               <param name="widget_header" value="$LOCALIZE[20343]"/>
               <param name="widget_target" value="videos"/>
               <param name="list_id" value="27012"/>
             </include>
             <include content="WidgetListPoster" condition="Skin.HasSetting(CollectionsResults)">
-              <param name="content_path" value="plugin://plugin.video.fen/?mode=build_movie_list&amp;action=tmdb_movies_search_sets&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+              <param name="content_path" value="plugin://plugin.video.twilight/?mode=build_movie_list&amp;action=tmdb_movies_search_sets&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
               <!-- <param name="widget_header" value="Collections"/> -->
               <param name="widget_header" value="[B]$LOCALIZE[700021][/B]"/>
               <param name="widget_target" value="videos"/>
               <param name="list_id" value="27013"/>
             </include>
             <include content="WidgetListPoster" condition="Skin.HasSetting(PeopleResults)">
-              <param name="content_path" value="plugin://plugin.video.fen/?mode=person_direct.search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
+              <param name="content_path" value="plugin://plugin.video.twilight/?mode=person_direct.search&amp;query=$INFO[Skin.String(SearchInputEncoded)]"/>
               <!-- <param name="widget_header" value="Actors/Actresses"/> -->
               <param name="widget_header" value="[B]$LOCALIZE[700022][/B]"/>
               <param name="widget_target" value="videos"/>
               <param name="list_id" value="27014"/>
             </include>
             <include content="WidgetListPoster" condition="Skin.HasSetting(MovieKeywordResults)">
-							<param name="content_path" value="plugin://plugin.video.fen/?mode=build_movie_list&amp;action=imdb_keywords_list_contents&amp;list_id=$INFO[Skin.String(SearchInputEncoded)]"/>
+							<param name="content_path" value="plugin://plugin.video.twilight/?mode=build_movie_list&amp;action=imdb_keywords_list_contents&amp;list_id=$INFO[Skin.String(SearchInputEncoded)]"/>
               <!-- <param name="widget_header" value="IMDb Keywords (Movies)"/> -->
               <param name="widget_header" value="[B]$LOCALIZE[700023][/B]"/>
               <param name="widget_target" value="videos"/>
               <param name="list_id" value="27015"/>
             </include>
             <include content="WidgetListPoster" condition="Skin.HasSetting(TVShowKeywordResults)">
-							<param name="content_path" value="plugin://plugin.video.fen/?mode=build_tvshow_list&amp;action=imdb_keywords_list_contents&amp;list_id=$INFO[Skin.String(SearchInputEncoded)]"/>
+							<param name="content_path" value="plugin://plugin.video.twilight/?mode=build_tvshow_list&amp;action=imdb_keywords_list_contents&amp;list_id=$INFO[Skin.String(SearchInputEncoded)]"/>
               <!-- <param name="widget_header" value="IMDb Keywords (TV Shows)"/> -->
               <param name="widget_header" value="[B]$LOCALIZE[700024][/B]"/>
               <param name="widget_target" value="videos"/>
               <param name="list_id" value="27016"/>
             </include>
 						<include content="WidgetListItems" condition="Skin.HasSetting(TraktResults)">
-              <param name="content_path" value="plugin://plugin.video.fen/?mode=trakt.list.search_trakt_lists&amp;query=$INFO[Skin.String(SearchInputTraktEncoded)]"/>
+              <param name="content_path" value="plugin://plugin.video.twilight/?mode=trakt.list.search_trakt_lists&amp;query=$INFO[Skin.String(SearchInputTraktEncoded)]"/>
               <!-- <param name="widget_header" value="TRAKT Lists"/> -->
               <param name="widget_header" value="[B]$LOCALIZE[700025][/B]"/>
               <param name="widget_target" value="videos"/>
@@ -205,7 +205,7 @@
 						</include>
 						<include content="IconButton">
 							<param name="control_id" value="802" />
-							<param name="onclick" value="ActivateWindow(10025,plugin://plugin.video.fen/?iconImage=https%3a%2f%2fi.imgur.com%2fxihFNwP.png&amp;mode=navigator.trakt_lists,return)" />
+							<param name="onclick" value="ActivateWindow(10025,plugin://plugin.video.twilight/?iconImage=https%3a%2f%2fi.imgur.com%2fxihFNwP.png&amp;mode=navigator.trakt_lists,return)" />
 							<param name="icon" value="icons/trakt-icon-white.png" />
 							<param name="label" value="TRAKT Lists" />
 						</include>
