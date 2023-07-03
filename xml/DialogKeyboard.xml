@@ -546,6 +546,7 @@
 				</control>
 			</control>
 			<control type="grouplist" id="95200">
+				<top>640</top>
 				<bottom>0</bottom>
 				<height>460</height>
 				<centerleft>88%</centerleft>
@@ -560,12 +561,12 @@
 				<include content="DefaultDialogButton">
 					<param name="id" value="300" />
 					<param name="label" value="$LOCALIZE[12321]" />
-					<param name="width" value="350" />
+					<param name="width" value="300" />
 				</include>
 				<include content="DefaultDialogButton">
 					<param name="id" value="301" />
 					<param name="label" value="$LOCALIZE[222]" />
-					<param name="width" value="350" />
+					<param name="width" value="300" />
 				</include>
 				<!-- KODI-RD-IL ADDITION - Voice Search Button -->
 				<control type="button" id="3010">
@@ -585,16 +586,16 @@
 				<!-- ########################################## -->
 				<include content="DefaultDialogButton">
 					<param name="id" value="310" />
-					<param name="width" value="350" />
+					<param name="width" value="300" />
 				</include>
 				<include content="DefaultDialogButton">
 					<param name="id" value="309" />
-					<param name="width" value="350" />
+					<param name="width" value="300" />
 				</include>
 				<include content="DefaultDialogButton">
 					<param name="id" value="307" />
 					<param name="label" value="$LOCALIZE[1006]" />
-					<param name="width" value="350" />
+					<param name="width" value="300" />
 				</include>
 			</control>
 			<control type="panel" id="9010">
