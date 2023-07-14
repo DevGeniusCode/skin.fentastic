@@ -65,7 +65,7 @@
 				<width>288</width>
 				<height>351</height>
 				<texture diffuse="masks/addons.png" colordiffuse="button_focus">colors/grey.png</texture>
-				<bordersize>20</bordersize>
+				<bordersize>19</bordersize>
 				<visible>$PARAM[focused] + Control.IsVisible(54)</visible>
 				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 			</control>
@@ -75,7 +75,7 @@
 				<width>288</width>
 				<height>351</height>
 				<texture diffuse="masks/addons.png" colordiffuse="button_focus">colors/grey.png</texture>
-				<bordersize>20</bordersize>
+				<bordersize>19</bordersize>
 				<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 			</control>
@@ -85,7 +85,7 @@
 				<width>288</width>
 				<height>351</height>
 				<texture diffuse="masks/addons.png" colordiffuse="button_focus">colors/grey.png</texture>
-				<bordersize>20</bordersize>
+				<bordersize>19</bordersize>
 				<visible>$PARAM[focused] + [Control.HasFocus(14100) | ControlGroup(400).HasFocus]</visible>
 				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 			</control>
@@ -147,6 +147,11 @@
 		<param name="fallback_image">DefaultTVShows.png</param>
 		<param name="focused">false</param>
 		<definition>
+			<include content="ProgressBar">
+				<param name="left" value="37"/>
+				<param name="top" value="245"/>
+				<param name="width" value="270"/>
+			</include>
 			<control type="image">
 				<top>10</top>
 				<width>347</width>
@@ -160,7 +165,7 @@
 				<width>355</width>
 				<height>291</height>
 				<texture colordiffuse="button_focus">masks/landscapeinfo.png</texture>
-				<bordersize>20</bordersize>
+				<bordersize>19</bordersize>
 				<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 			</control>
@@ -174,7 +179,7 @@
 				<!-- 234 -->
 				<height>212</height>
 				<texture diffuse="masks/landscapeinfo-artwork.png" fallback="$PARAM[fallback_image]" background="true">$VAR[IconWallThumbVar]</texture>
-				<aspectratio>scale</aspectratio>
+				<aspectratio>stretch</aspectratio>
 				<bordersize>20</bordersize>
 			</control>
 			<control type="image">
@@ -308,7 +313,7 @@
 				<control type="label">
 					<visible>[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)]</visible>
 					<left>15%</left>
-					<top>217</top>
+					<top>219</top>
 					<width>100%</width>
 					<label>$PARAM[main_label]</label>
 					<font>font12</font>
@@ -319,7 +324,7 @@
 				<control type="label">
 					<visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)]</visible>
 					<left>15%</left>
-					<top>217</top>
+					<top>219</top>
 					<width>100%</width>
 					<label>$PARAM[networks_label]</label>
 					<font>font12</font>
@@ -329,12 +334,6 @@
 				</control>
 			</control>
 			<!-- TODO Add progress bar for widgets -->
-			<include content="ProgressBar" condition="!$PARAM[focused]">
-				<!-- 20 -->
-				<param name="left" value="37"/>
-				<param name="top" value="250"/>
-				<param name="width" value="270"/>
-			</include>
 			<control type="label">
 				<left>51</left>
 				<top>173</top>
@@ -365,6 +364,11 @@
 		<definition>
 			<control type="group">
 				<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+				<include content="ProgressBar">
+					<param name="left" value="35"/>
+					<param name="top" value="265.9"/>
+					<param name="width" value="165"/>
+				</include>
 				<control type="image">
 					<left>15</left>
 					<top>-10</top>
@@ -409,13 +413,18 @@
 			</control>
 			<control type="group">
 				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+				<include content="ProgressBar">
+					<param name="left" value="35"/>
+					<param name="top" value="266"/>
+					<param name="width" value="165"/>
+				</include>
 				<control type="image">
 					<left>-4</left>
 					<top>-14</top>
 					<width>243</width>
 					<height>332</height>
 					<texture colordiffuse="button_focus">masks/poster.png</texture>
-					<bordersize>20</bordersize>
+					<bordersize>19</bordersize>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
@@ -425,7 +434,7 @@
 					<width>243</width>
 					<height>332</height>
 					<texture colordiffuse="button_focus">masks/poster.png</texture>
-					<bordersize>20</bordersize>
+					<bordersize>19</bordersize>
 					<visible>$PARAM[focused] + [Control.IsVisible(54) | Control.IsVisible(500)]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
@@ -581,12 +590,6 @@
 				</include>
 			</control>
 			<!-- TODO Add progress bar for widgets -->
-			<include content="ProgressBar" condition="!$PARAM[focused]">
-				<!-- 21 -->
-				<param name="left" value="35"/>
-				<param name="top" value="271"/>
-				<param name="width" value="165"/>
-			</include>
 		</definition>
 	</include>
 	<include name="View_54_InfoWall">
