@@ -743,7 +743,7 @@
 	<value condition="String.IsEqual(ListItem.Status,returning series)">$LOCALIZE[700027]</value>
 	<value condition="String.IsEqual(ListItem.Status,in production)">$LOCALIZE[700028]</value>
 	<value condition="String.IsEqual(ListItem.Status,planned)">$LOCALIZE[700029]</value>
-	<value condition="String.IsEqual(ListItem.Status,cancelled)">$LOCALIZE[700030]</value>
+	<value condition="String.IsEqual(ListItem.Status,canceled)">$LOCALIZE[700030]</value>
 	<value condition="String.IsEqual(ListItem.Status,ended)">$LOCALIZE[700031]</value>
 	</variable>
 	
