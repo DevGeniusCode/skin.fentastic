@@ -40,11 +40,6 @@
 				<include>SettingsPanel</include>
 				<content>
 					<item>
-						<label>Skin settings</label>
-						<onclick>ActivateWindow(skinsettings)</onclick>
-						<icon>defaultaddonlookandfeel.png</icon>
-					</item>
-					<item>
 						<label>$LOCALIZE[10003]</label>
 						<onclick>ActivateWindow(filemanager)</onclick>
 						<icon>icons/settings/filemanager.png</icon>
@@ -58,6 +53,11 @@
 						<label>$LOCALIZE[138]</label>
 						<onclick>ActivateWindow(systeminfo)</onclick>
 						<icon>icons/settings/sysinfo.png</icon>
+					</item>
+					<item>
+						<label>$LOCALIZE[700018]</label>
+						<onclick>ActivateWindow(skinsettings)</onclick>
+						<icon>defaultaddonlookandfeel.png</icon>
 					</item>
 				</content>
 			</control>
