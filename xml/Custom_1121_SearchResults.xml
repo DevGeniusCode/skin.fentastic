@@ -267,7 +267,7 @@
 						<top>239</top>
 						<width>410</width>
 						<bottom>60</bottom>
-						<label>$VAR[HomeInfoPanel]</label>
+						<label>$VAR[InfoPanel]</label>
 						<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
 					</control>
 					<control type="textbox">
@@ -277,7 +277,7 @@
 						<width>410</width>
 						<bottom>60</bottom>
 						<align>right</align>
-						<label>$VAR[HomeInfoPanel]</label>
+						<label>$VAR[InfoPanel]</label>
 						<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
 					</control>
 					<control type="textbox">
