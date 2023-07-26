@@ -944,4 +944,10 @@ msgctxt "#700039"
 msgid "Duration"
 msgstr "אורך"
 
+# Player OSD Pause Window - VideoFullScreen.xml
+
+msgctxt "#700040"
+msgid "Paused"
+msgstr "מושהה"
+
 ################################################################
