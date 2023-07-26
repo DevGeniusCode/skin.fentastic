@@ -59,6 +59,7 @@
 	<expression name="HomeScreenOff">![Window.IsActive(home) | Control.IsVisible(50) | Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(504)]</expression>
 	<expression name="SkinZoomToggle">Skin.HasSetting(ZoomToggle)</expression>
 	<expression name="LiveTvCondition">!VideoPlayer.Content(livetv)</expression>
+	<expression name="PuasedTended_PreFIx">Player.Paused + !String.IsEmpty(VideoPlayer.Plot)</expression>
 	<include name="CommonScrollbars">
 		<param name="bottom_offset">list_bottom_offset</param>
 		<definition>
@@ -475,7 +476,7 @@
 				<param name="end">0</param>
 				</include>
 					<top>10</top>
-					<width>260</width>
+					<width>240</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.RatingAndVotes) + $EXP[HomeScreenOff]</visible>
 					<include>pre_fix_setview_flags</include>
 					<include content="InfoFlag">
@@ -523,6 +524,26 @@
 						<param name="labelleft">45</param>
 						<param name="icon" value="kodirdil/poster_view_icons/clock.png" />
 						<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Duration(hh:mm:ss)]" />
+					</include>
+				</control>
+				<control type="group">
+				<visible>String.IsEqual(ListItem.DBTYPE,tvhsow) | Container.Content(tvshows) + ![String.IsEmpty(ListItem.Status)]</visible>
+				<include content="SetSlideAnimation">
+				<param name="setproperty">Container.Content(tvshows)</param>
+				<param name="end">0</param>
+				</include>
+				<include content="SetSlideAnimation">
+				<param name="setproperty">Container.Content(tvshows)</param>
+				<param name="end">0</param>
+				</include>
+					<top>10</top>
+					<width>120</width>
+					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Status) + $EXP[HomeScreenOff]</visible>
+					<include>pre_fix_setview_flags</include>
+					<include content="InfoFlag">
+						<param name="labelleft">45</param>
+						<param name="icon" value="kodirdil/poster_view_icons/tvshow_status.png" />
+						<param name="label" value="$VAR[SetHebStatus]" />
 					</include>
 				</control>
 				<control type="group">
