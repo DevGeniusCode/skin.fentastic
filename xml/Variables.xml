@@ -17,6 +17,9 @@
 		<value condition="String.IsEmpty(Container.PluginName)">$INFO[ListItem.FolderPath]</value>
 		<value></value>
 	</variable>
+	<variable name="Fix_Dolby">
+	<value condition="String.IsEqual(VideoPlayer.AudioCodec,eac3)">DOLBY</value>
+	</variable>
 	<variable name="AddonCountLabel">
 		<value condition="Integer.IsGreater(System.AddonUpdateCount,0)">$INFO[System.AddonUpdateCount]</value>
 		<value>$INFO[System.AddonUpdateCount,[COLOR grey],[/COLOR]]</value>

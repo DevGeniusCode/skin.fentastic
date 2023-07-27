@@ -2021,4 +2021,48 @@
 		<nested />
 	</include>
 	
+	<include name="SetPauseTendedFlagsVideosOSd">
+	<param name="flag_w" default="125"/>
+	<param name="flag_h" default="50"/>
+	<param name="base_flag_icon" default="flag.png"/>
+	<param name="label_top" default="0"/>
+	<param name="label_left" default="0"/>
+	<param name="label_width" default="125"/>
+	<param name="label_height" default="50"/>
+	<param name="groupwidth" default="$PARAM[groupwidth]"/>
+	<definition>
+	<control type="group">
+	<width>$PARAM[groupwidth]</width>
+	<visible>!String.IsEmpty(VideoPlayer.$PARAM[label]) | !String.IsEmpty($PARAM[label2]) | !String.IsEmpty(VideoPlayer.$PARAM[label3])</visible>
+		<control type="image">
+			<top>0</top>
+			<left>0</left>
+			<width>$PARAM[flag_w]</width>
+			<height>$PARAM[flag_h]</height>
+			<texture>flags/$PARAM[base_flag_icon]</texture>
+		</control>
+		<control type="image">
+			<top>0</top>
+			<left>0</left>
+			<width>$PARAM[flag_w]</width>
+			<height>$PARAM[flag_h]</height>
+			<texture>flags/$PARAM[icon]/$INFO[VideoPlayer.$PARAM[label3]].png</texture>
+		</control>
+		<control type="label" id="1">
+			<description>buffering value</description>
+			<label>[B]$INFO[VideoPlayer.$PARAM[label]]$INFO[$PARAM[label2]] $PARAM[freetext][/B]</label>
+			<top>$PARAM[label_top]</top>
+			<left>$PARAM[label_left]</left>
+			<width>$PARAM[label_width]</width>
+			<height>$PARAM[label_height]</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>font20_title</font>
+		</control>
+	</control>
+	<nested />
+	</definition>
+	</include>
+
+
 </includes>
