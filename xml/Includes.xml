@@ -153,6 +153,28 @@
 			</control>
 		</definition>
 	</include>
+	<include name="Label_prefix">
+		<control type="textbox" id="1">
+			<animation type="Visible">
+				<effect type="slide" start="150" end="0" time="250" tween="sine" easing="inout"/>
+				<effect type="fade" start="50" end="100" time="250" delay="150"/>
+			</animation>
+			<animation type="Hidden">
+				<effect type="slide" start="0" end="150" time="250" tween="sine" easing="inout"/>
+				<effect type="fade" start="100" end="0" time="250" delay="150"/>
+			</animation>
+			<visible>$EXP[PuasedTended_PreFIx]</visible>
+				<description>buffering value</description>
+				<label fallback="$VAR[EmptyPlayerLabel_prefix]">[B][COLOR $PARAM[color]]$INFO[VideoPlayer.$PARAM[label]][/COLOR][/B]</label>
+				<centerleft>$PARAM[centerleft]%</centerleft>
+				<centertop>$PARAM[centertop]%</centertop>
+				<width>700</width>
+				<height>220</height>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>$PARAM[font_prefix]</font>
+			</control>
+		</include>
 	<include name="UserRatingContent">
 		<visible>!String.IsEmpty($PARAM[infolabel])</visible>
 		<control type="image">
