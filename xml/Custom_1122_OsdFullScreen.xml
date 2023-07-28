@@ -210,7 +210,7 @@
 				<include content="SetPauseTendedFlagsVideosOSd">
 					<param name="groupwidth">120</param>
 					<param name="label">AudioLanguage</param>
-					<param name="freetext">Audio</param>
+					<param name="freetext">-Audio</param>
 				</include>
 				<include content="SetPauseTendedFlagsVideosOSd">
 				<param name="groupwidth">120</param>
@@ -219,7 +219,7 @@
 				<include content="SetPauseTendedFlagsVideosOSd">
 					<param name="groupwidth">120</param>
 					<param name="label">VideoAspect</param>
-					<param name="freetext">Asp</param>
+					<param name="freetext"></param>
 				</include>
 				<include content="SetPauseTendedFlagsVideosOSd">
 					<param name="groupwidth">120</param>
