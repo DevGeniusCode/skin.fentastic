@@ -944,10 +944,16 @@ msgctxt "#700039"
 msgid "Duration"
 msgstr "אורך"
 
-# Player OSD Pause Window - VideoFullScreen.xml
+# Player OSD Pause Window - Custom_1122_OsdFullScreen.xml
 
 msgctxt "#700040"
 msgid "Paused"
 msgstr "מושהה"
+
+# Player Label Empty While Pausing Pause Window - Custom_1122_OsdFullScreen.xml
+
+msgctxt "#700041"
+msgid "Info Not Available"
+msgstr "מידע לא זמין"
 
 ################################################################

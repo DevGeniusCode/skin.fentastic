@@ -17,6 +17,9 @@
 		<value condition="String.IsEmpty(Container.PluginName)">$INFO[ListItem.FolderPath]</value>
 		<value></value>
 	</variable>
+	<variable name="Episode_prefix">
+	<value condition="VideoPlayer.Content(episodes)">[B][COLOR white]$LOCALIZE[700015][/COLOR] [COLOR button_focus]$INFO[VideoPlayer.Season][/COLOR][/B] / [B][COLOR white]$LOCALIZE[700016][/COLOR] [COLOR button_focus]$INFO[VideoPlayer.Episode][/COLOR][/B]</value>
+	</variable>
 	<variable name="AddonCountLabel">
 		<value condition="Integer.IsGreater(System.AddonUpdateCount,0)">$INFO[System.AddonUpdateCount]</value>
 		<value>$INFO[System.AddonUpdateCount,[COLOR grey],[/COLOR]]</value>
@@ -72,11 +75,6 @@
 	</variable>
 	<variable name="FanartThumbVar">
 		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[Listitem.Art(thumb)]</value>
-	</variable>
-	<variable name="EmptyPlayerLabel_prefix">
-		<value condition="String.IsEmpty(VideoPlayer.Genre)">Genre Information Is Not Available</value>
-		<value condition="String.IsEmpty(VideoPlayer.Title)">Title Information Is Empty</value>
-		<value condition="String.IsEmpty(VideoPlayer.Plot)">Plot Information Is Not Available</value>
 	</variable>
 	<variable name="PosterThumbVar">
 		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[Listitem.Art(poster)]</value>

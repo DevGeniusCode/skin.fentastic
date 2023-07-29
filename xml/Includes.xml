@@ -165,7 +165,7 @@
 			</animation>
 			<visible>$EXP[PuasedTended_PreFIx]</visible>
 				<description>buffering value</description>
-				<label fallback="$VAR[EmptyPlayerLabel_prefix]">[B][COLOR $PARAM[color]]$INFO[VideoPlayer.$PARAM[label]][/COLOR][/B]</label>
+				<label fallback="$LOCALIZE[700041]">[B][COLOR $PARAM[color]]$INFO[Control.GetLabel($PARAM[id])][/COLOR][/B]</label>
 				<centerleft>$PARAM[centerleft]%</centerleft>
 				<centertop>$PARAM[centertop]%</centertop>
 				<width>700</width>
@@ -174,6 +174,7 @@
 				<align>center</align>
 				<font>$PARAM[font_prefix]</font>
 			</control>
+			<nested />
 		</include>
 	<include name="UserRatingContent">
 		<visible>!String.IsEmpty($PARAM[infolabel])</visible>
@@ -281,7 +282,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font_flag</font>
-				<label fallback="n/a">$PARAM[labelflag]$PARAM[freelabel]</label>
+				<label fallback="$LOCALIZE[700041]">$PARAM[labelflag]$PARAM[freelabel]</label>
 				</control>
 		</definition>
 		</include>
@@ -2085,6 +2086,36 @@
 	<nested />
 	</definition>
 	</include>
-
+	
+	<include name="SetFadeLabel">
+		<include content="TimeFadeLabel">
+			<param name="id">$PARAM[id]</param>
+		</include>
+	</include>
+	
+	<include name="TimeFadeLabel">
+		<param name="id" default="$PARAM[id]"/>
+	<definition>
+		
+	<control type="fadelabel" id="$PARAM[id]">
+		<animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
+        <description>My First fadelabel</description>
+        <left>-2000</left>
+        <top>-2060</top>
+        <width>1</width>
+        <visible>true</visible>
+        <scrollout>true</scrollout>
+        <pauseatend>500</pauseatend>
+        <label>6</label>
+        <info>VideoPlayer.Genre</info>
+		<info>VideoPlayer.Year</info>
+        <font>font10</font>
+        <textcolor>FFB2D4F5</textcolor>
+        <textoffsetx>20</textoffsetx>
+        <scroll>true</scroll>
+        <randomize>true</randomize>
+  </control>
+  </definition>
+ </include>
 
 </includes>
