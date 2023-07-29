@@ -197,6 +197,13 @@
 				<pagecontrol>60</pagecontrol>
 				<ondown>637</ondown>
 				<visible>Container(9000).HasFocus(2)</visible>
+				<!-- ALTERNATE INFOPANEL -->
+				<control type="radiobutton" id="7000">
+					<label>Use alternate format for InfoPanel</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(Enable.AlternateInfo)</onclick>
+					<selected>Skin.HasSetting(Enable.AlternateInfo)</selected>
+				</control>
 				<!-- RAINDROP BACKGROUND -->
 				<control type="radiobutton" id="6370">
 					<label>Show raindrop background</label>

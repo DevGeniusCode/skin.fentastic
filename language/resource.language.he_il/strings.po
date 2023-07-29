@@ -956,4 +956,10 @@ msgctxt "#700041"
 msgid "Info Not Available"
 msgstr "מידע לא זמין"
 
+# Continue InfoPanel - Variables.xml:
+
+msgctxt "#700042"
+msgid "Age Limit"
+msgstr "הגבלת גיל"
+
 ################################################################
