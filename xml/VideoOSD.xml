@@ -359,12 +359,14 @@
 						<onclick>ActivateWindow(osdsubtitlesettings)</onclick>
 						<visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasSubtitles</visible>
 					</control>
+					<!-- Info buttn - unused because Pause Window (Custom_1122_OsdFullScreen.xml)
 					<control type="radiobutton" id="70043">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/information.png"/>
 						</include>
 						<onclick>Info</onclick>
 					</control>
+					-->
 					<control type="radiobutton" id="70044">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/bookmarks.png"/>
