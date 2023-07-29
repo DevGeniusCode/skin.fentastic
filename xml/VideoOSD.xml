@@ -367,7 +367,7 @@
 						<visible>Integer.IsGreater(VideoPlayer.AudioStreamCount,1)</visible>
 						<onclick>AudioNextLanguage</onclick>
 					</control>
-					<!-- Info buttn - unused because Pause Window (Custom_1122_OsdFullScreen.xml)
+					<!-- Info button - unused because Pause Window (Custom_1122_OsdFullScreen.xml)
 					<control type="radiobutton" id="70043">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/information.png"/>
