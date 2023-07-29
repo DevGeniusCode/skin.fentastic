@@ -349,7 +349,6 @@
 						<height>77</height>
 						<texturenofocus colordiffuse="grey_a">kodirdil/subtitles_window/choose_subs.png</texturenofocus>
 						<texturefocus colordiffuse="button_focus">kodirdil/subtitles_window/choose_subs.png</texturefocus>
-						<onup>70046</onup>
 						<onclick>RunScript(service.subtitles.All_Subs,sub_window_unpause)</onclick>
 					</control>
 					<control type="radiobutton" id="70046">
@@ -358,6 +357,15 @@
 						</include>
 						<onclick>ActivateWindow(osdsubtitlesettings)</onclick>
 						<visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasSubtitles</visible>
+					</control>
+					<control type="button" id="700452">
+						<description>Switch to next Audio track</description>
+						<texturenofocus colordiffuse="grey_a">kodirdil/next_audio_track/next_audio_track.png</texturenofocus>
+						<texturefocus colordiffuse="button_focus">kodirdil/next_audio_track/next_audio_track.png</texturefocus>
+						<width>76</width>
+						<height>76</height>
+						<visible>Integer.IsGreater(VideoPlayer.AudioStreamCount,1)</visible>
+						<onclick>AudioNextLanguage</onclick>
 					</control>
 					<!-- Info buttn - unused because Pause Window (Custom_1122_OsdFullScreen.xml)
 					<control type="radiobutton" id="70043">
