@@ -193,7 +193,7 @@
 					<height>220</height>
 					<aligny>center</aligny>
 					<align>center</align>
-					<font>font45_title</font>
+					<font>font40_title</font>
 			</control>
 			<control type="group">
 				<animation type="Visible">
