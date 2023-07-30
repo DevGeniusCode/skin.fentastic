@@ -99,7 +99,25 @@
 				<width>392</width>
 				<height>592</height>
 				<texture fallback="kodirdil/fallbacks/videodefault.jpg" diffuse="masks/poster-50.png">$VAR[NowPlayingPosterVar]</texture>
-			</control>			
+			</control>		
+
+		<control type="image" id="1">
+			<animation type="Visible">
+			<effect type="slide" start="150" end="0" time="250" tween="sine" easing="inout"/>
+			<effect type="fade" start="50" end="100" time="250" delay="150"/>
+			</animation>
+			<animation type="Hidden">
+			<effect type="slide" start="0" end="150" time="250" tween="sine" easing="inout"/>
+			<effect type="fade" start="100" end="0" time="250" delay="150"/>
+			</animation>
+				<visible>$EXP[PuasedTended_PreFIx]</visible>
+				<centerleft>78%</centerleft>
+				<centertop>65%</centertop>
+				<width>220</width>
+				<height>122</height>
+				<texture diffuse="masks/landscape-502.png">$VAR[NowPlayingFanartVar]</texture>
+		</control>	
+			
 			<control type="textbox" id="1">
 				<animation type="Visible">
 				<effect type="slide" start="150" end="0" time="250" tween="sine" easing="inout"/>
@@ -168,7 +186,7 @@
 				</animation>
 					<visible>$EXP[PuasedTended_PreFIx]</visible>
 					<description>buffering value</description>
-					<label>[B][COLOR yellow]$INFO[VideoPlayer.Title][/COLOR][/B]</label>
+					<label fallback="n/a">[B][COLOR yellow]$VAR[NowPlayingLabelVar][/COLOR][/B]</label>
 					<centerleft>54.5%</centerleft>
 					<centertop>29%</centertop>
 					<width>420</width>
@@ -177,14 +195,47 @@
 					<align>center</align>
 					<font>font45_title</font>
 			</control>
+			<control type="group">
+				<animation type="Visible">
+				<effect type="slide" start="150" end="0" time="250" tween="sine" easing="inout"/>
+				<effect type="fade" start="50" end="100" time="250" delay="150"/>
+				</animation>
+				<animation type="Hidden">
+				<effect type="slide" start="0" end="150" time="250" tween="sine" easing="inout"/>
+				<effect type="fade" start="100" end="0" time="250" delay="150"/>
+				</animation>
+				<visible>$EXP[PuasedTended_PreFIx]</visible>
+				<left>1385</left>
+				<top>-1200</top>
+				<visible>$EXP[Label_Visible_preFix]</visible>
+				<left>-45</left>
+				<control type="image">
+					<centertop>80%</centertop>
+					<centerleft>21%</centerleft>
+					<width>100</width>
+					<height>19</height>
+					<texture border="16">kodirdil/overlays/progress-back.png</texture>
+					<colordiffuse>white</colordiffuse>
+				</control>
+				<control type="progress">
+					<centertop>79.4%</centertop>
+					<centerleft>21.5%</centerleft>
+					<height>12</height>
+					<width>100</width>
+					<texturebg>-</texturebg>
+					<midtexture colordiffuse="button_focus" border="10.8">kodirdil/overlays/progress-mid.png</midtexture>
+					<info>Player.Progress</info>
+				</control>
+				</control>
 			<include content="Label_prefix">
 				<param name="color">button_focus</param>
 				<param name="id">12333</param>
 				<param name="centerleft">54.5</param>
 				<param name="centertop">68</param>
 				<param name="font_prefix">font10</param>
-					<animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
-			</include>	
+				<param name="visible">$EXP[Label_Visible_preFix]</param>
+				<animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
+			</include>
 				<control type="textbox" id="1">
 				<animation type="Visible">
 				<effect type="slide" start="150" end="0" time="250" tween="sine" easing="inout"/>
@@ -220,7 +271,7 @@
 					<label fallback="$LOCALIZE[700041]">[B]$INFO[VideoPlayer.Plot][/B]</label>
 					<centerleft>54.5%</centerleft>
 					<centertop>54%</centertop>
-					<width>700</width>
+					<width>600</width>
 					<height>155</height>
 					<aligny>center</aligny>
 					<align>center</align>
@@ -239,7 +290,7 @@
 		<visible>$EXP[PuasedTended_PreFIx]</visible>
 		<centertop>82%</centertop>
 		<centerleft>56.5%</centerleft>
-			<width>850</width>
+			<width>840</width>
 			<height>200</height>
 			<align>center</align>
 			<orientation>horizontal</orientation>

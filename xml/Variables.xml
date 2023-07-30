@@ -43,8 +43,20 @@
 	<variable name="NowPlayingPosterVar">
 		<value condition="!String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
 		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
-		<value condition="String.IsEmpty(Player.Icon) + VideoPlayer.Content(livetv)">DefaultTVShows.png</value>
-		<value>$INFO[Player.Icon]</value>
+		<value condition="!String.IsEmpty(Player.Icon)">$INFO[Player.Icon]</value>
+		<value>DefaultTVShows.png</value>
+	</variable>
+		<variable name="NowPlayingLabelVar">
+		<value condition="!String.IsEmpty(VideoPlayer.Title)">$INFO[VideoPlayer.Title]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.TvShowTitle)">$INFO[VideoPlayer.TvShowTitle]</value>
+		<value>$INFO[VideoPlayer.Title]</value>
+	</variable>
+	<variable name="NowPlayingFanartVar">
+		<value condition="!String.IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Player.Art(tvshow.fanart))">$INFO[Player.Art(tvshow.fanart)]</value>
+		<value condition="!String.IsEmpty(Player.Icon)">$INFO[Player.Icon]</value>
+		<value condition="!String.IsEmpty(Player.Icon)">$INFO[Player.Icon]</value>
+	<value>DefaultNoPreview.png</value>
 	</variable>
 	<variable name="ShiftThumbVar">
 		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[Listitem.Art(poster)]</value>

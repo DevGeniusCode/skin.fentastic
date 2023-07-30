@@ -60,6 +60,7 @@
 	<expression name="SkinZoomToggle">Skin.HasSetting(ZoomToggle)</expression>
 	<expression name="LiveTvCondition">!VideoPlayer.Content(livetv)</expression>
 	<expression name="PuasedTended_PreFIx">Player.Paused + !String.IsEmpty(VideoPlayer.Plot)</expression>
+	<expression name="Label_Visible_preFix">VideoPlayer.Content(movies) | VideoPlayer.Content(tvshows) | VideoPlayer.Content(seasons) | VideoPlayer.Content(episodes) + ![String.IsEmpty(VideoPlayer.Genre) | String.IsEmpty(VideoPlayer.Year)]</expression>
 	<include name="CommonScrollbars">
 		<param name="bottom_offset">list_bottom_offset</param>
 		<definition>
@@ -164,6 +165,7 @@
 				<effect type="fade" start="100" end="0" time="250" delay="150"/>
 			</animation>
 			<visible>$EXP[PuasedTended_PreFIx]</visible>
+			<visible>$PARAM[visible]</visible>
 				<description>buffering value</description>
 				<label fallback="$LOCALIZE[700041]">[B][COLOR $PARAM[color]]$INFO[Control.GetLabel($PARAM[id])][/COLOR][/B]</label>
 				<centerleft>$PARAM[centerleft]%</centerleft>
@@ -2103,7 +2105,6 @@
         <left>-2000</left>
         <top>-2060</top>
         <width>1</width>
-        <visible>true</visible>
         <scrollout>true</scrollout>
         <pauseatend>500</pauseatend>
         <label>6</label>
@@ -2115,6 +2116,7 @@
         <scroll>true</scroll>
         <randomize>true</randomize>
   </control>
+  <nested />
   </definition>
  </include>
 
