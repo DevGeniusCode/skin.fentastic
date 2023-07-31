@@ -369,7 +369,7 @@
 						<height>76</height>
 						<texturenofocus colordiffuse="grey_a">osd/fullscreen/buttons/channels.png</texturenofocus>
 						<texturefocus colordiffuse="button_focus">osd/fullscreen/buttons/channels.png</texturefocus>
-						<onclick>ActivateWindow(1180)</onclick>
+						<onclick>ActivateWindow(1123)</onclick>
 						<visible>!VideoPlayer.Content(LiveTV)</visible>
 					</control>
 					<control type="radiobutton" id="598">
