@@ -61,6 +61,7 @@
 	<expression name="LiveTvCondition">!VideoPlayer.Content(livetv)</expression>
 	<expression name="PuasedTended_PreFIx">Player.Paused + !String.IsEmpty(VideoPlayer.Plot) + !Window.IsActive(1123)</expression>
 	<expression name="Label_Visible_preFix">VideoPlayer.Content(movies) | VideoPlayer.Content(tvshows) | VideoPlayer.Content(seasons) | VideoPlayer.Content(episodes) + ![String.IsEmpty(VideoPlayer.Genre) | String.IsEmpty(VideoPlayer.Year)]</expression>
+	<expression name="fakebuttonsync">Control.HasFocus(700450)</expression>
 	<include name="CommonScrollbars">
 		<param name="bottom_offset">list_bottom_offset</param>
 		<definition>
@@ -125,6 +126,29 @@
 		<texturenofocus />
 		<label></label>
 		<font></font>
+	</include>
+	
+	<include name="syncfakebutton">
+						<control type="image" id="2232320">
+						<visible>!$EXP[fakebuttonsync]</visible>
+						<top>60</top>
+						<left>80</left>
+						<description>Manual Subtitles Delay Sync</description>
+						<width>140</width>
+						<height>140</height>
+						<texture>kodirdil/subtitles_window/sync_subtitle.png</texture>
+						<visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasSubtitles</visible>
+					</control>
+					<control type="image" id="2232320">
+					<visible>$EXP[fakebuttonsync]</visible>
+						<top>60</top>
+						<left>80</left>
+						<description>Manual Subtitles Delay Sync</description>
+						<width>140</width>
+						<height>140</height>
+						<texture colordiffuse="button_focus">kodirdil/subtitles_window/sync_subtitle.png</texture>
+						<visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasSubtitles</visible>
+					</control>
 	</include>
 	<include name="RatingCircle">
 		<param name="animation">False</param>
