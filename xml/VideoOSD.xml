@@ -370,7 +370,7 @@
 						<texturenofocus colordiffuse="grey_a">osd/fullscreen/buttons/channels.png</texturenofocus>
 						<texturefocus colordiffuse="button_focus">osd/fullscreen/buttons/channels.png</texturefocus>
 						<onclick>ActivateWindow(1180)</onclick>
-						<visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasSubtitles</visible>
+						<visible>!VideoPlayer.Content(LiveTV)</visible>
 					</control>
 					<control type="radiobutton" id="598">
 					<visible>$EXP[SkinZoomToggle]</visible>
