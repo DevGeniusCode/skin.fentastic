@@ -1126,13 +1126,13 @@ msgctxt "#700039"
 msgid "Duration"
 msgstr ""
 
-# Player OSD Pause Window - Custom_1122_OsdFullScreen.xml
+# Player OSD Pause Window - Custom_1122_PlayerPauseWindow.xml
 
 msgctxt "#700040"
 msgid "Paused"
 msgstr ""
 
-# Player Label Empty While Pausing Pause Window - Custom_1122_OsdFullScreen.xml
+# Player Label Empty While Pausing Pause Window - Custom_1122_PlayerPauseWindow.xml
 
 msgctxt "#700041"
 msgid "Info Not Available"

@@ -391,7 +391,7 @@
 						</include>
 						<include condition="$EXP[LiveTvCondition]">In</include>
 					</control>
-					<!-- Info button - unused because Pause Window (Custom_1122_OsdFullScreen.xml)
+					<!-- Info button - unused because Pause Window (Custom_1122_PlayerPauseWindow.xml)
 					<control type="radiobutton" id="70043">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/information.png"/>
