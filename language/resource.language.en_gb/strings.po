@@ -1158,4 +1158,10 @@ msgctxt "#700045"
 msgid "Idan Plus And Radio Channels"
 msgstr ""
 
+# ShowPlayerPauseWindow Seting- Custom_1101_SettingsList.xml
+
+msgctxt "#700046"
+msgid "Show information window on playback pause"
+msgstr ""
+
 ################################################################
