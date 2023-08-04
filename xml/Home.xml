@@ -1159,7 +1159,7 @@
 				<top>30</top>
 				<left>90</left>
         <control type="image">
-          <left>-135</left>
+          <left>-55</left>
           <top>-20</top>
           <aspectratio>keep</aspectratio>
           <width>230</width>
@@ -1167,7 +1167,7 @@
           <texture>special://skin/media/kodirdil/group_logo/kodirdil-logo.png</texture>
         </control>
         <control type="image">
-          <left>-25</left>
+          <left>55</left>
           <top>0</top>
           <aspectratio>keep</aspectratio>
           <width>192</width>
