@@ -917,6 +917,7 @@
 							<height>$PARAM[icon_height]</height>
 							<texture colordiffuse="dialog_bg2" fallback="DefaultFolder.png">$PARAM[icon]</texture>
 							<aspectratio>scale</aspectratio>
+							<visible>!Skin.HasSetting(NoIconSilhouettes)</visible>
 						</control>
 						<control type="textbox">
 							<visible>!String.IsEqual(ListItem.FolderPath,addons://outdated/)</visible>
@@ -969,6 +970,7 @@
 							<height>$PARAM[icon_height]</height>
 							<texture colordiffuse="dialog_bg2" fallback="DefaultFolder.png">$PARAM[icon]</texture>
 							<aspectratio>scale</aspectratio>
+							<visible>!Skin.HasSetting(NoIconSilhouettes)</visible>
 						</control>
 						<!-- <control type="image">
 							<top>23</top>
@@ -1065,6 +1067,7 @@
 									<height>$PARAM[icon_height]</height>
 									<texture colordiffuse="dialog_bg2" fallback="DefaultFolder.png">$PARAM[icon]</texture>
 									<aspectratio>scale</aspectratio>
+									<visible>!Skin.HasSetting(NoIconSilhouettes)</visible>
 								</control>
 								<control type="textbox">
 									<left>47</left>
@@ -1103,6 +1106,7 @@
 									<height>$PARAM[icon_height]</height>
 									<texture colordiffuse="dialog_bg2" fallback="DefaultFolder.png">$PARAM[icon]</texture>
 									<aspectratio>scale</aspectratio>
+									<visible>!Skin.HasSetting(NoIconSilhouettes)</visible>
 								</control>
 								<!-- <control type="image">
 									<top>23</top>
