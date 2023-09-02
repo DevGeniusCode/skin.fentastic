@@ -19,7 +19,7 @@
 				<include>ButtonMenuList</include>
 				<content>
 					<item>
-						<label>$LOCALIZE[13012]</label>
+						<label>[B][COLOR blue]$LOCALIZE[13012][/COLOR][/B]</label>
 						<!-- Original - <onclick>Quit()</onclick> -->
 						<!-- Force Close Kodi Script:  -->
 						<onclick>RunScript(&quot;plugin.close.kodi&quot;)</onclick>
@@ -27,13 +27,13 @@
 					</item>
 					<item>
 						<!-- Skin settings in Hebrew  -->
-						<label>$LOCALIZE[700018]</label>
+						<label>[B][COLOR blue]$LOCALIZE[700018][/COLOR][/B]</label>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>ActivateWindow(SkinSettings.xml)</onclick>
 					</item>
 					<item>
 						<!-- Reload skin in Hebrew  -->
-						<label>$LOCALIZE[700017]</label>
+						<label>[B][COLOR blue]$LOCALIZE[700017][/COLOR][/B]</label>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>ReloadSkin()</onclick>
 					</item>
