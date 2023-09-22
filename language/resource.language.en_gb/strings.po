@@ -1158,7 +1158,7 @@ msgctxt "#700045"
 msgid "Idan Plus And Radio Channels"
 msgstr ""
 
-# ShowPlayerPauseWindow Seting- Custom_1101_SettingsList.xml
+# ShowPlayerPauseWindow Seting - Custom_1101_SettingsList.xml
 
 msgctxt "#700046"
 msgid "Show information window on playback pause"
@@ -1212,6 +1212,12 @@ msgstr ""
 
 msgctxt "#700056"
 msgid "Switch Audio track"
+msgstr ""
+
+# ChooseSubtitlesButtonOpensKodiWindow Seting - Custom_1101_SettingsList.xml
+
+msgctxt "#700057"
+msgid "\"Choose subtitles\" button opens Kodi window"
 msgstr ""
 
 ################################################################
