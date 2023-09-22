@@ -1014,4 +1014,22 @@ msgctxt "#700053"
 msgid "Clear DarkSubs Cache"
 msgstr "ניקוי קאש DarkSubs"
 
+# Episodes Playlist Button - VideoOSD.xml
+
+msgctxt "#700054"
+msgid "Episodes List"
+msgstr "רשימת פרקים"
+
+# Twilight Switch Video Source Button - VideoOSD.xml
+
+msgctxt "#700055"
+msgid "Switch Source"
+msgstr "החלף מקור"
+
+# Switch to next Audio track Button - VideoOSD.xml
+
+msgctxt "#700056"
+msgid "Switch Audio track"
+msgstr "החלף ערוץ שמע"
+
 ################################################################

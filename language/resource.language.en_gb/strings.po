@@ -1196,4 +1196,22 @@ msgctxt "#700053"
 msgid "Clear DarkSubs Cache"
 msgstr ""
 
+# Episodes Playlist Button - VideoOSD.xml
+
+msgctxt "#700054"
+msgid "Episodes List"
+msgstr ""
+
+# Twilight Switch Video Source Button - VideoOSD.xml
+
+msgctxt "#700055"
+msgid "Switch Source"
+msgstr ""
+
+# Switch to next Audio track Button - VideoOSD.xml
+
+msgctxt "#700056"
+msgid "Switch Audio track"
+msgstr ""
+
 ################################################################
