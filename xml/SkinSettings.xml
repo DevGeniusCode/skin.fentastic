@@ -88,6 +88,8 @@
 					<onclick>Skin.ToggleSetting(HomeMenuNoTVShowsCategories)</onclick>
 					<visible>!Skin.HasSetting(HomeMenuNoTVShowsButton)</visible>
 				</control> -->
+				
+				<!-- KODI-RD-IL ADDITION -->
 				<!-- IDAN PLUS -->
 				<control type="radiobutton" id="6270">
 				<label>$INFO[Skin.String(MenuIdanPlusLabel)]</label>
@@ -107,6 +109,8 @@
 				<onclick>RunScript(script.fentastic.helper,mode=manage_widgets&amp;cpath_setting=idanplus.widget)</onclick>
 				<visible>!Skin.HasSetting(HomeMenuNoIdanPlusButton)</visible>
 				</control>
+				<!-- ##################### -->
+				
 				<!-- MUSIC -->
 				<control type="radiobutton" id="6252">
 					<label>$LOCALIZE[31008]</label>
@@ -197,6 +201,8 @@
 				<pagecontrol>60</pagecontrol>
 				<ondown>637</ondown>
 				<visible>Container(9000).HasFocus(2)</visible>
+				
+				<!-- KODI-RD-IL ADDITION -->
 				<!-- ALTERNATE INFOPANEL -->
 				<control type="radiobutton" id="7000">
 					<label>Use alternate format for InfoPanel</label>
@@ -204,6 +210,8 @@
 					<onclick>Skin.ToggleSetting(Enable.AlternateInfo)</onclick>
 					<selected>Skin.HasSetting(Enable.AlternateInfo)</selected>
 				</control>
+				<!-- ##################### -->
+				
 				<!-- RAINDROP BACKGROUND -->
 				<control type="radiobutton" id="6370">
 					<label>Show raindrop background</label>
@@ -261,35 +269,50 @@
 					<visible>!Skin.HasSetting(NoSearchResultsWindow)</visible>
 				</control>
 				<control type="radiobutton" id="6383">
+					<!-- KODI-RD-IL CHANGES -->
+					<!-- <label>   - Collections</label> -->
 					<label>   - [B]$LOCALIZE[700021][/B]</label>
+					<!-- ##################### -->
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(HideCollectionsResults)</onclick>
 					<selected>!Skin.HasSetting(HideCollectionsResults)</selected>
 					<visible>!Skin.HasSetting(NoSearchResultsWindow)</visible>
 				</control>
 				<control type="radiobutton" id="6384">
+					<!-- KODI-RD-IL CHANGES -->
+					<!-- <label>   - Actors/Actresses</label> -->
 					<label>   - [B]$LOCALIZE[700022][/B]</label>
+					<!-- ##################### -->
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(HidePeopleResults)</onclick>
 					<selected>!Skin.HasSetting(HidePeopleResults)</selected>
 					<visible>!Skin.HasSetting(NoSearchResultsWindow)</visible>
 				</control>
 				<control type="radiobutton" id="6385">
+					<!-- KODI-RD-IL CHANGES -->
+					<!-- <label>   - IMDb Keywords (Movies)</label> -->
 					<label>   - [B]$LOCALIZE[700023][/B]</label>
+					<!-- ##################### -->
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(HideMovieKeywordResults)</onclick>
 					<selected>!Skin.HasSetting(HideMovieKeywordResults)</selected>
 					<visible>!Skin.HasSetting(NoSearchResultsWindow)</visible>
 				</control>
 				<control type="radiobutton" id="6386">
+					<!-- KODI-RD-IL CHANGES -->
+					<!-- <label>   - IMDb Keywords (TV Shows)</label> -->
 					<label>   - [B]$LOCALIZE[700024][/B]</label>
+					<!-- ##################### -->
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(HideTVShowKeywordResults)</onclick>
 					<selected>!Skin.HasSetting(HideTVShowKeywordResults)</selected>
 					<visible>!Skin.HasSetting(NoSearchResultsWindow)</visible>
 				</control>
 				<control type="radiobutton" id="6387">
+					<!-- KODI-RD-IL CHANGES -->
+					<!-- <label>   - TRAKT Lists</label> -->
 					<label>   - [B]$LOCALIZE[700025][/B]</label>
+					<!-- ##################### -->
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(HideTraktResults)</onclick>
 					<selected>!Skin.HasSetting(HideTraktResults)</selected>
