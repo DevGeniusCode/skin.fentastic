@@ -170,8 +170,7 @@
 					<top>680</top>
 					<width>180</width>
 						<!-- KODI-RD-IL CHANGES -->
-					<!-- <label>$INFO[ListItem.Property(WatchedProgress)]%</label> -->
-					<label>$INFO[ListItem.Property(WatchedProgress)]% watched</label>
+					<label>$INFO[ListItem.Property(WatchedProgress)]% $LOCALIZE[700013]</label>
 						<!-- ##################### -->
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
