@@ -1280,7 +1280,7 @@
 				<bottom>0</bottom>
 				<height>50</height>
 				<font>font25_title</font>
-				<label>$LOCALIZE[700060]: $INFO[System.BuildVersionShort]</label>
+				<label>$LOCALIZE[700062]: $INFO[System.BuildVersionShort]</label>
 			</control>
 		</control>
 	</controls>
