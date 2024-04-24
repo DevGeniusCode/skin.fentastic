@@ -1252,7 +1252,7 @@ msgstr ""
 
 # APK Update Check In Power Menu - DialogButtonMenu.xml
 
-msgctxt "#700061"
+msgctxt "#700063"
 msgid "APK Update Check"
 msgstr ""
 
