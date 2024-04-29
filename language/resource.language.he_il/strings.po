@@ -1056,7 +1056,7 @@ msgctxt "#700060"
 msgid "Kodi Version"
 msgstr "גרסת קודי"
 
-# APK Update Check In Power Menu - DialogButtonMenu.xml
+# Kodi Update Check In Power Menu - DialogButtonMenu.xml
 
 msgctxt "#700061"
 msgid "Update Kodi Version"
