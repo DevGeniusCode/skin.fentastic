@@ -169,9 +169,9 @@
 					<left>275</left>
 					<top>680</top>
 					<width>180</width>
-						<!-- KODI-RD-IL CHANGES -->
+					<!-- KODI-RD-IL CHANGES -->
 					<label>$INFO[ListItem.Property(WatchedProgress)]% $LOCALIZE[700013]</label>
-						<!-- ##################### -->
+					<!-- ##################### -->
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
 					<align>right</align>
@@ -223,7 +223,6 @@
 					<width>435</width>
 					<height>24</height>
 					<!-- KODI-RD-IL CHANGES -->
-					<!-- <label>$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</label> -->
 					<label>$INFO[ListItem.Property(TotalSeasons)] $VAR[SeasonCorrectLabel] / $INFO[ListItem.Property(TotalEpisodes)] $LOCALIZE[7000161]</label>
 					<!-- ##################### -->
 					<font>font20_title</font>
