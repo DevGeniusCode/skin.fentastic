@@ -6,6 +6,7 @@
 			<depth>DepthMax</depth>
 			<top>100</top>
 			<right>0</right>
+			<!-- KODI-RD-IL CHANGES MULTIPLE -->
 			<width>720</width>
 			<include>OpenClose_Right</include>
 			<visible>String.IsEmpty(Window(Home).Property(script.cinemavision.running))</visible>

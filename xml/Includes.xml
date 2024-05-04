@@ -364,51 +364,6 @@
 			</focusedlayout>
 		</definition>
 	</include>
-	<include name="InfoFlag">
-	
-	<!-- KODI-RD-IL ADDITION -->
-	<param name="imagesize" default="40"/>
-	<param name="imagetop" default="-3"/>
-	<param name="imageleft" default="0"/>
-	<param name="labelleft" default="40"/>
-	<definition>
-	<!-- ##################### -->
-	
-		<control type="group">
-			<width>180</width>
-			<visible>$PARAM[visible]</visible>
-			<control type="image">
-				<!-- KODI-RD-IL CHANGES -->
-				<!-- <top>-3</top> -->
-				<!-- <left>0</left> -->
-				<!-- <width>40</width> -->
-				<!-- <height>40</height> -->
-				<top>$PARAM[imagetop]</top>
-				<left>$PARAM[imageleft]</left>
-				<width>$PARAM[imagesize]</width>
-				<height>$PARAM[imagesize]</height>
-				<!-- ##################### -->
-				<texture colordiffuse="white">$PARAM[icon]</texture>
-			</control>
-			<control type="label">
-				<!-- KODI-RD-IL CHANGES -->
-				<!-- <left>50</left> -->
-				<!-- <width>180</width> -->
-				<left>$PARAM[labelleft]</left>
-				<width>620</width>
-				<!-- ##################### -->
-				<height>35</height>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<label>$PARAM[label]</label>
-			</control>
-		</control>
-		
-	<!-- KODI-RD-IL ADDITION -->
-	</definition>
-	<!-- ##################### -->
-	
-	</include>
 	<include name="MediaFlag">
 		<param name="width">115</param>
 		<param name="height">60</param>
@@ -1207,7 +1162,8 @@
 	</include>
 	<include name="ColoredBackgroundImages">
 		<control type="image">
-			<visible>[Skin.HasSetting(no_fanart) | String.IsEmpty(Listitem.Art(fanart))] + !Player.HasMedia + !Skin.HasSetting(TrailerPlaying)</visible>
+			<!-- KODI-RD-IL CHANGES -->
+			<visible>[!Skin.HasSetting(no_fanart) | String.IsEmpty(Listitem.Art(fanart))] + !Player.HasMedia + !Skin.HasSetting(TrailerPlaying)</visible>
 			<depth>DepthBackground</depth>
 			<include>FullScreenDimensions</include>
 			<aspectratio>scale</aspectratio>
@@ -1292,7 +1248,7 @@
 				<control type="group">
 				
 					<!-- KODI-RD-IL ADDITION -->
-					<left>1720</left>
+					<!-- <left>1720</left> -->
 					<!-- ##################### -->
 					
 					<visible>$PARAM[info_visible]</visible>
@@ -1835,16 +1791,33 @@
 			<control type="textbox">
 				<height>auto</height>
 				<font>font36_title</font>
-				<label>Season $INFO[ListItem.Season], Episode $INFO[ListItem.Episode]</label>
+				<!-- KODI-RD-IL CHANGES -->
+				<label>$LOCALIZE[700015] $INFO[ListItem.Season], $LOCALIZE[700016] $INFO[ListItem.Episode]</label>
+				<!-- ##################### -->
+			
+				<!-- KODI-RD-IL ADDITION -->
+				<align>right</align>
+				<!-- ##################### -->
+				
 				<textcolor>unfocused_text</textcolor>
 				<visible>String.IsEqual(ListItem.DbType,episode)</visible>
 			</control>
 			<control type="textbox">
 				<height>auto</height>
 				<label>$VAR[InfoPanelTop]</label>
+			
+				<!-- KODI-RD-IL ADDITION -->
+				<align>right</align>
+				<!-- ##################### -->
+				
 				<textcolor>unfocused_text</textcolor>
 			</control>
 			<control type="grouplist">
+			
+				<!-- KODI-RD-IL ADDITION -->
+				<align>right</align>
+				<!-- ##################### -->
+				
 				<height>90</height>
 				<orientation>horizontal</orientation>
 				<itemgap>$PARAM[ratings_spacing]</itemgap>
@@ -2001,6 +1974,11 @@
 				<height max="$PARAM[height_alt_movie]">auto</height>
 				<bottom>70</bottom>
 				<label>$VAR[InfoPanelBottom]</label>
+			
+				<!-- KODI-RD-IL ADDITION -->
+				<align>right</align>
+				<!-- ##################### -->
+				
 				<textcolor>unfocused_text</textcolor>
 				<autoscroll delay="5000" time="2000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
 				<visible>Skin.HasSetting(Enable.AlternateInfo) + [String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,episode) | String.IsEqual(ListItem.DBtype,season)]</visible>
@@ -2009,6 +1987,11 @@
 				<height max="$PARAM[height_alt_tvshow]">auto</height>
 				<bottom>70</bottom>
 				<label>$VAR[InfoPanelBottom]</label>
+			
+				<!-- KODI-RD-IL ADDITION -->
+				<align>right</align>
+				<!-- ##################### -->
+				
 				<textcolor>unfocused_text</textcolor>
 				<autoscroll delay="5000" time="2000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
 				<visible>Skin.HasSetting(Enable.AlternateInfo) + String.IsEqual(ListItem.DBtype,tvshow)</visible>
@@ -2121,16 +2104,6 @@
 		</definition>
 	</include>
 	-->
-	
-	<include name="DialogSeekVideoOSD">
-		<top>880</top>
-		<left>1025</left>
-		<width>650</width>
-		<height>100</height>
-		<ondown>200</ondown>
-		<onback>201</onback>
-		<orientation>horizontal</orientation>
-	</include>
 
 	<include name="Out">
 		<onclick>ZoomOut</onclick>
@@ -2138,24 +2111,6 @@
 
 	<include name="In">
 		<onclick>ZoomIn</onclick>
-	</include>
-
-	<include name="ZoomFocused">
-		<control type="group">
-		<animation effect="fade" start="0" end="100" time="150" delay="50">Visible</animation>
-		<visible>Control.HasFocus($PARAM[Control_id])</visible>
-		<include content="preFix_VideoOSDZoomFocused">
-			<param name="id">$PARAM[id]</param>
-		</include>
-			<control type="image">
-				<top>850</top>
-				<left>0</left>
-				<width>120</width>
-				<height>50</height>
-				<texture colordiffuse="gray">$VAR[SeekStepFocuedTexture]</texture>
-				</control>
-			</control>
-		<nested />
 	</include>
 	
 	<include name="NextPreviousIndicator">

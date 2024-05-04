@@ -161,10 +161,10 @@
 					<control type="image">
 					<animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
 					<visible>!String.IsEmpty(ListItem.Studio)</visible>
-				<left>22</left>
-				<top>0</top>
-					<width>110</width>
-					<height>80</height>
+					<left>22</left>
+					<top>0</top>
+					<width>120</width>
+					<height>90</height>
 					<aspectratio align="left" aligny="center" scalediffuse="false">keep</aspectratio>
 					<texture>kodirdil/studiologos/$INFO[ListItem.Studio].png</texture>
 				</control>

@@ -57,7 +57,8 @@
 							<right>260</right>
 							<aligny>center</aligny>
 							<scroll>true</scroll>
-							<scrollspeed>160</scrollspeed>
+							<!-- KODI-RD-IL CHANGES -->
+							<scrollspeed>20</scrollspeed>
 							<font>font52_title</font>
 							<label>$VAR[ListLabelVar]</label>
 							<shadowcolor>text_shadow</shadowcolor>

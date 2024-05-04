@@ -64,6 +64,7 @@
 				<left>51</left>
 				<top>195</top>
 				<width>100</width>
+				<!-- KODI-RD-IL CHANGES -->
 				<label>$INFO[ListItem.Property(WatchedProgress)]% $LOCALIZE[700013]</label>
 				<font>font20_title</font>
 				<shadowcolor>text_shadow</shadowcolor>
@@ -261,6 +262,7 @@
 					<left>55</left>
 					<top>160</top>
 					<width>315</width>
+					<!-- KODI-RD-IL CHANGES -->
 					<label>$INFO[ListItem.Property(WatchedProgress)]% $LOCALIZE[700013]</label>
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -290,6 +292,7 @@
 					<left>2</left>
 					<top>161</top>
 					<width>315</width>
+					<!-- KODI-RD-IL CHANGES -->
 					<label>$INFO[ListItem.Property(WatchedProgress)]% $LOCALIZE[700013]</label>
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -311,6 +314,7 @@
 					<left>2</left>
 					<top>161</top>
 					<width>315</width>
+					<!-- KODI-RD-IL CHANGES -->
 					<label>$INFO[ListItem.Property(WatchedProgress)]% $LOCALIZE[700013]</label>
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -568,6 +572,7 @@
 					<left>103</left>
 					<top>215</top>
 					<width>315</width>
+					<!-- KODI-RD-IL CHANGES -->
 					<label>$INFO[ListItem.Property(WatchedProgress)]% $LOCALIZE[700013]</label>
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -589,6 +594,7 @@
 					<left>103</left>
 					<top>215</top>
 					<width>315</width>
+					<!-- KODI-RD-IL CHANGES -->
 					<label>$INFO[ListItem.Property(WatchedProgress)]% $LOCALIZE[700013]</label>
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -601,6 +607,7 @@
 					<left>60</left>
 					<top>215</top>
 					<width>315</width>
+					<!-- KODI-RD-IL CHANGES -->
 					<label>$INFO[ListItem.Property(WatchedProgress)]% $LOCALIZE[700013]</label>
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -612,6 +619,7 @@
 					<left>60</left>
 					<top>215</top>
 					<width>315</width>
+					<!-- KODI-RD-IL CHANGES -->
 					<label>$INFO[ListItem.Property(WatchedProgress)]% $LOCALIZE[700013]</label>
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>

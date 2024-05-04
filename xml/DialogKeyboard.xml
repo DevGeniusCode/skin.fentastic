@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<!-- KODI-RD-IL CHANGES -->
-	<!-- <defaultcontrol always="true">300</defaultcontrol> -->
 	<defaultcontrol always="true">3010</defaultcontrol>
 	<!-- ##################### -->
 	<include>Keyboard_Slide_Up</include>
@@ -672,7 +671,8 @@
 							<align>center</align>
 							<aligny>center</aligny>
 							<scroll>true</scroll>
-							<scrollspeed>100</scrollspeed>
+							<!-- KODI-RD-IL CHANGES -->
+							<scrollspeed>20</scrollspeed>
 						</control>
 					</control>
 				</focusedlayout>
