@@ -1090,21 +1090,21 @@ msgstr ""
 
 # DialogSeekVideoOSD in Player - VideoOSD.XML
 
-msgctxt "#700032"
-msgid "Show Seek Steps Window"
-msgstr ""
+# msgctxt "#700032"
+# msgid "Show Seek Steps Window"
+# msgstr ""
 
-msgctxt "#700033"
-msgid "Forward Seek Steps"
-msgstr ""
+# msgctxt "#700033"
+# msgid "Forward Seek Steps"
+# msgstr ""
 
-msgctxt "#700034"
-msgid "Rewind Seek Steps"
-msgstr ""
+# msgctxt "#700034"
+# msgid "Rewind Seek Steps"
+# msgstr ""
 
-msgctxt "#700035"
-msgid "Mins"
-msgstr ""
+# msgctxt "#700035"
+# msgid "Mins"
+# msgstr ""
 
 # Zoom Toggle Buttons in Player - VideoOSD.XML
 
@@ -1232,16 +1232,54 @@ msgctxt "#700059"
 msgid "Next Episode"
 msgstr ""
 
-# Kodi Version - Home.xml
+# Kodi Manual Sync Subtitles - VideoOSD.xml
 
 msgctxt "#700060"
+msgid "Sync Subtitles"
+msgstr ""
+
+# DarkSubs Subtitles Window Button - VideoOSD.xml
+
+msgctxt "#700061"
+msgid "Choose Subtitles (DarkSubs)"
+msgstr ""
+
+# Kodi Version - Home.xml
+
+msgctxt "#700062"
 msgid "Kodi Version"
 msgstr ""
 
 # Kodi Update Check In Power Menu - DialogButtonMenu.xml
 
-msgctxt "#700061"
+msgctxt "#700063"
 msgid "Update Kodi Version"
+msgstr ""
+
+# CONTINUE FENtastic Search Results Window - Custom_1121_SearchResults.xml:
+
+msgctxt "#700064"
+msgid "Search provider"
+msgstr ""
+
+# InfoPanel - Variables.xml:
+
+msgctxt "#700065"
+msgid "Aired"
+msgstr ""
+
+msgctxt "#700066"
+msgid "hr"
+msgstr ""
+
+msgctxt "#700067"
+msgid "mins"
+msgstr ""
+
+#: Show Widget Menu button_focus Border - SkinSettings.xml
+
+msgctxt "#700068"
+msgid "Show widget menu name colored border"
 msgstr ""
 
 ################################################################

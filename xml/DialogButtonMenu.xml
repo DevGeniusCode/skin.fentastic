@@ -18,6 +18,7 @@
 			<control type="panel" id="9000">
 				<include>ButtonMenuList</include>
 				<content>
+					<!-- KODI-RD-IL CHANGES -->
 					<item>
 						<label>[B][COLOR blue]$LOCALIZE[13012][/COLOR][/B]</label>
 						<!-- Original - <onclick>Quit()</onclick> -->
@@ -58,7 +59,7 @@
 					</item>
 					<item>
 						<!-- KODI ANDORID/WINDOWS Update Check -->
-						<label>[B][COLOR blue]$LOCALIZE[700061][/COLOR][/B]</label>
+						<label>[B][COLOR blue]$LOCALIZE[700063][/COLOR][/B]</label>
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>PlayMedia(&quot;plugin://plugin.program.kodirealdebridisraelwizard/?mode=install&amp;action=kodi_version_update_check&amp;kodi_version_update_check_manual=true&quot;)</onclick>
 						<!-- Android/Windows only -->
@@ -77,6 +78,7 @@
 						<onclick>Dialog.Close(all)</onclick>
 						<onclick>ReloadSkin()</onclick>
 					</item>
+					<!-- ##################### -->
 				</content>
 			</control>
 		<include content="UpDownArrows">

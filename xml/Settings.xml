@@ -27,6 +27,7 @@
 				<top>420</top>
 				<height>400</height>
 				<label>$LOCALIZE[5]</label>
+				<textcolor>unfocused_text</textcolor>
 				<align>center</align>
 				<font>font37</font>
 			</control>
@@ -39,6 +40,14 @@
 				<ondown>Control.SetFocus(9001,$INFO[Container(9000).Position],absolute)</ondown>
 				<include>SettingsPanel</include>
 				<content>
+					<item>
+						<!-- KODI-RD-IL CHANGES -->
+						<!-- <label>Skin settings</label> -->
+						<label>$LOCALIZE[700018]</label>
+						<!-- ##################### -->
+						<onclick>ActivateWindow(skinsettings)</onclick>
+						<icon>icons/settings/skin.png</icon>
+					</item>
 					<item>
 						<label>$LOCALIZE[10003]</label>
 						<onclick>ActivateWindow(filemanager)</onclick>
@@ -53,11 +62,6 @@
 						<label>$LOCALIZE[138]</label>
 						<onclick>ActivateWindow(systeminfo)</onclick>
 						<icon>icons/settings/sysinfo.png</icon>
-					</item>
-					<item>
-						<label>$LOCALIZE[700018]</label>
-						<onclick>ActivateWindow(skinsettings)</onclick>
-						<icon>icons/settings/skin.png</icon>
 					</item>
 				</content>
 			</control>
