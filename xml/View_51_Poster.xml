@@ -26,12 +26,10 @@
 			<!-- This group defines the main container for the poster view and its visibility -->
 			<control type="group">
 				<visible>Control.IsVisible(51)</visible>
-				<include>Visible_Right</include>
-				<include>OpenClose_Right</include>
-
-				<!-- This control represents a fixed list of items in the poster view -->
+				<include>Visible_Left</include>
+				<include>OpenClose_Left</include>
 				<control type="fixedlist" id="51">
-					<left>-10</left>
+					<right>-10</right>
 					<top>0</top>
 					<width>110%</width>
 					<height>704</height>
@@ -39,11 +37,11 @@
 					<movement>0</movement>
 					<pagecontrol>5199</pagecontrol>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<orientation>horizontal</orientation>
-					<onleft>51</onleft>
+					<orientation>horizontalRtl</orientation>
+					<onright>51</onright>
 					<onup>9000</onup>
 					<ondown>5199</ondown>
-					<onright>51</onright>
+					<onleft>51</onleft>
 					<hitrect x="100" y="0" w="800" h="400" />
 					<!-- Visibility conditions for the list based on the content type -->
 					<visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(games)</visible>
@@ -53,7 +51,7 @@
 					<!-- Defines the layout for each item in the list -->
 					<itemlayout width="215">
 						<control type="group">
-							<left>-118</left>
+							<right>-118</right>
 							<top>18</top>
 							<include>InfoWallMovieLayout</include>
 						</control>
@@ -63,7 +61,7 @@
 					<focusedlayout width="490">
 						<control type="group">
 							<control type="group">
-								<left>-220</left>
+								<right>-220</right>
 								<top>18</top>
 								<visible>Container.OnScrollPrevious</visible>
 								<visible>Control.IsVisible(20000)</visible>
@@ -71,7 +69,7 @@
 								<include>InfoWallMovieLayout</include>
 							</control>
 							<control type="group">
-								<left>-40</left>
+								<right>-40</right>
 								<top>18</top>
 								<visible>Container.OnScrollNext</visible>
 								<visible>Control.IsVisible(20000)</visible>
@@ -86,7 +84,7 @@
 				<control type="group">
 					<top>25</top>
 					<control type="group">
-						<left>635</left>
+						<right>635</right>
 						<top>480</top>
 						<height>245</height>
 						<!-- This section displays information for collections or empty plots -->
@@ -101,7 +99,7 @@
 
 					<!-- Icon indicating watched status -->
 					<control type="image">
-						<left>645</left>
+						<right>645</right>
 						<top>337</top>
 						<width>32</width>
 						<height>32</height>
@@ -110,9 +108,9 @@
 
 					<!-- Title label for the selected item -->
 					<control type="label">
-						<left>695</left>
+						<right>695</right>
 						<top>322</top>
-						<right>50</right>
+						<left>50</left>
 						<height>40</height>
 						<label>$INFO[ListItem.Label]$VAR[ListSubLabelVar]</label>
 						<font>font45_title</font>
@@ -124,10 +122,10 @@
 
 					<!-- Textbox for the plot description -->
 					<control type="textbox">
-						<left>645</left>
+						<right>645</right>
 						<top>402</top>
 						<height>335</height>
-						<right>115</right>
+						<left>115</left>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasActiveModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 						<label>$VAR[PlotTextBoxVar]</label>
 						<textcolor>unfocused_text</textcolor>
@@ -141,16 +139,15 @@
 			<!-- This group defines the main layout for the poster view on the left side -->
 			<centertop>50%</centertop>
 			<height>670</height>
-			<left>101</left>
+			<right>101</right>
 			<depth>DepthContentPopout</depth>
 			<visible>Control.IsVisible(51)</visible>
-			<include>OpenClose_Left</include>
-			<include>Visible_Left</include>
-
+			<include>OpenClose_Right</include>
+			<include>Visible_Right</include>
 			<control type="group">
 				<!-- Image control for the main poster thumbnail -->
 				<control type="image">
-					<left>4</left>
+					<right>4</right>
 					<top>4</top>
 					<width>476</width>
 					<height>716</height>
@@ -161,7 +158,7 @@
 
 				<!-- Overlay image control that appears when certain conditions are met -->
 				<control type="image">
-					<left>4</left>
+					<right>4</right>
 					<top>570</top>
 					<width>476</width>
 					<height>150</height>
@@ -171,7 +168,7 @@
 
 				<!-- Label showing the watched progress of the movie -->
 				<control type="label">
-					<left>275</left>
+					<right>275</right>
 					<top>680</top>
 					<width>180</width>
 					<!-- KODI-RD-IL CHANGES -->
@@ -179,17 +176,17 @@
 					<!-- ##################### -->
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
-					<align>right</align>
+					<align>left</align>
 					<visible>String.IsEqual(ListItem.DBtype,movie) + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(WatchedProgress)) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
-				
+
 				<!-- KODI-RD-IL ADDITION -->
 				<!-- Studio logo image, shown when the studio name is available -->
 				<control type="image">
 					<animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
 					<visible>!String.IsEmpty(ListItem.Studio)</visible>
-					<left>22</left>
+					<right>22</right>
 					<top>0</top>
 					<width>120</width>
 					<height>90</height>
@@ -199,7 +196,7 @@
 				<!-- ##################### -->
 				<!-- Group for displaying the rating circle -->
 				<control type="group">
-				<left>433</left>
+				<right>433</right>
 				<top>-14</top>
 				<include content="RatingCircle">
 					<param name="animation" value="True" />
@@ -218,7 +215,7 @@
 			<control type="group">
 				<visible>String.IsEqual(ListItem.DBtype,tvshow)</visible>
 				<control type="image">
-					<left>4</left>
+					<right>4</right>
 					<top>570</top>
 					<width>476</width>
 					<height>150</height>
@@ -228,7 +225,7 @@
 
 				<!-- Label showing total seasons and episodes of the TV show -->
 				<control type="label">
-					<left>-20</left>
+					<right>-20</right>
 					<top>684</top>
 					<width>435</width>
 					<height>24</height>
@@ -243,7 +240,7 @@
 
 				<!-- Image for indicating played episodes -->
 				<control type="image">
-					<left>425</left>
+					<right>425</right>
 					<top>684</top>
 					<width>24</width>
 					<height>24</height>
@@ -255,7 +252,7 @@
 
 			<!-- Progress bar indicating how much of the item has been played -->
 			<control type="progress">
-				<left>4</left>
+				<right>4</right>
 				<top>702</top>
 				<width>476</width>
 				<height>1</height>
@@ -266,21 +263,21 @@
 			</control>
 		</control>
 	</include>
-	
+
 	<!-- KODI-RD-IL ADDITION -->
 	<!-- Include for displaying the ClearArt logo -->
 	<include name="Poster_View_Art_Logo">
-		<param name="top" default="-105"/>
-		<param name="left" default="50%"/>
+	<param name="top" default="-105"/>
+	<param name="right" default="50%"/>
 		<definition>
 			<control type="group">
 				<visible>Control.IsVisible(51)</visible>
 				<control type="image">
 					<top>-150</top>
-					<left>42%</left>
+					<right>42%</right>
 					<width>320</width>
 					<height>130</height>
-					<aspectratio scalediffuse="false" align="left" aligny="center">keep</aspectratio>
+					<aspectratio scalediffuse="false" align="right" aligny="center">keep</aspectratio>
 					<texture>$VAR[ClearArtLogo]</texture>
 				</control>
 			</control>
