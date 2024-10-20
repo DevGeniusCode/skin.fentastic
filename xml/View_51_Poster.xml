@@ -17,7 +17,17 @@
 			<description>Poster Viewtype</description>
 			<centertop>50%</centertop>
 			<height>720</height>
-
+			<control type="image">
+				<left>0</left>
+				<top>4</top>
+				<width>100%</width>
+				<height>332</height>
+				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<texture colordiffuse="button_focus2">dialogs/dialog-bg-nobo.png</texture>
+				<visible>Control.IsVisible(51)</visible>
+			</control>
 			<!-- KODI-RD-IL ADDITION: Includes the Poster View Art Logo content -->
 			<include content="Poster_View_Art_Logo">
 			</include>
