@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="View_51_Poster">
+		<!-- This section contains the settings for the main button to achieve proper animations -->
 		<control type="button" id="20000">
 			<description>Dummy button to get animations right (hide focusedlayout on animations)</description>
 			<include>HiddenObject</include>
+			<!-- Animations for showing/hiding the button -->
 			<animation effect="fade" delay="500" time="0" start="100" end="0">Visible</animation>
 			<animation effect="fade" delay="500" time="0" start="100" end="0">WindowOpen</animation>
 			<onclick>noop</onclick>
 			<visible>Control.IsVisible(51)</visible>
 		</control>
+
+		<!-- This section defines the poster view type -->
 		<control type="group">
 			<description>Poster Viewtype</description>
 			<centertop>50%</centertop>
 			<height>720</height>
 
-			<!-- KODI-RD-IL ADDITION -->
+			<!-- KODI-RD-IL ADDITION: Includes the Poster View Art Logo content -->
 			<include content="Poster_View_Art_Logo">
 			</include>
 			<!-- ##################### -->
-		
+
+			<!-- This group defines the main container for the poster view and its visibility -->
 			<control type="group">
 				<visible>Control.IsVisible(51)</visible>
-				<include>Visible_Right</include>
-				<include>OpenClose_Right</include>
+				<include>Visible_Left</include>
+				<include>OpenClose_Left</include>
 				<control type="fixedlist" id="51">
-					<left>-10</left>
+					<left>20</left>
 					<top>0</top>
 					<width>110%</width>
 					<height>704</height>
@@ -32,22 +37,27 @@
 					<movement>0</movement>
 					<pagecontrol>5199</pagecontrol>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<orientation>horizontal</orientation>
-					<onleft>51</onleft>
+					<orientation>horizontalRtl</orientation>
+					<onright>51</onright>
 					<onup>9000</onup>
 					<ondown>5199</ondown>
-					<onright>51</onright>
+					<onleft>51</onleft>
 					<hitrect x="100" y="0" w="800" h="400" />
+					<!-- Visibility conditions for the list based on the content type -->
 					<visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(games)</visible>
 					<preloaditems>1</preloaditems>
 					<viewtype label="20021">icon</viewtype>
+
+					<!-- Defines the layout for each item in the list -->
 					<itemlayout width="215">
 						<control type="group">
-							<left>-118</left>
+							<left>1912</left> <!-- 1690% -->
 							<top>18</top>
 							<include>InfoWallMovieLayout</include>
 						</control>
 					</itemlayout>
+
+					<!-- Focused layout for the list, displaying adjacent items -->
 					<focusedlayout width="490">
 						<control type="group">
 							<control type="group">
@@ -69,13 +79,15 @@
 						</control>
 					</focusedlayout>
 				</control>
-				<!-- Title and Plot -->
+
+				<!-- Title and plot section for the selected item -->
 				<control type="group">
 					<top>25</top>
 					<control type="group">
-						<left>635</left>
+						<right>635</right>
 						<top>480</top>
 						<height>245</height>
+						<!-- This section displays information for collections or empty plots -->
 						<visible>ListItem.IsCollection + String.IsEmpty(ListItem.PlotOutline) + String.IsEmpty(ListItem.Plot)</visible>
 						<include content="InfoList">
 							<param name="bottom" value="0" />
@@ -84,30 +96,37 @@
 							<param name="font" value="font13" />
 						</include>
 					</control>
+
+					<!-- Icon indicating watched status -->
 					<control type="image">
-						<left>645</left>
+						<right>645</right>
 						<top>337</top>
 						<width>32</width>
 						<height>32</height>
 						<texture colordiffuse="unfocused_text">$VAR[ListWatchedIconVar]</texture>
 					</control>
+
+					<!-- Title label for the selected item -->
 					<control type="label">
-						<left>695</left>
+						<align>right</align>
+						<right>600</right>
 						<top>322</top>
-						<right>50</right>
 						<height>40</height>
 						<label>$INFO[ListItem.Label]$VAR[ListSubLabelVar]</label>
 						<font>font45_title</font>
-						<!-- KODI-RD-IL ADDITION -->
+						<!-- KODI-RD-IL ADDITION: Text color for the title -->
 						<textcolor>yellow</textcolor>
 						<!-- ##################### -->
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
+
+					<!-- Textbox for the plot description -->
 					<control type="textbox">
-						<left>645</left>
+						<align>right</align>
+						<right>600</right>
 						<top>402</top>
 						<height>335</height>
-						<right>115</right>
+						<left>115</left>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasActiveModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 						<label>$VAR[PlotTextBoxVar]</label>
 						<textcolor>unfocused_text</textcolor>
@@ -118,16 +137,18 @@
 			</control>
 		</control>
 		<control type="group">
+			<!-- This group defines the main layout for the poster view on the left side -->
 			<centertop>50%</centertop>
 			<height>670</height>
-			<left>101</left>
+			<right>101</right>
 			<depth>DepthContentPopout</depth>
 			<visible>Control.IsVisible(51)</visible>
-			<include>OpenClose_Left</include>
-			<include>Visible_Left</include>
+			<include>OpenClose_Right</include>
+			<include>Visible_Right</include>
 			<control type="group">
+				<!-- Image control for the main poster thumbnail -->
 				<control type="image">
-					<left>4</left>
+					<right>4</right>
 					<top>4</top>
 					<width>476</width>
 					<height>716</height>
@@ -135,16 +156,20 @@
 					<!-- <aspectratio>scale</aspectratio> -->
 					<texture diffuse="masks/poster-50.png" fallback="DefaultMovies.png" background="true">$VAR[PosterThumbVar]</texture>
 				</control>
+
+				<!-- Overlay image control that appears when certain conditions are met -->
 				<control type="image">
-					<left>4</left>
+					<right>4</right>
 					<top>570</top>
 					<width>476</width>
 					<height>150</height>
 					<texture colordiffuse="CCFFFFFF">overlays/overlayfade51.png</texture>
 					<visible>String.IsEqual(ListItem.DBtype,movie) + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(WatchedProgress)) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)</visible>
 				</control>
+
+				<!-- Label showing the watched progress of the movie -->
 				<control type="label">
-					<left>275</left>
+					<right>275</right>
 					<top>680</top>
 					<width>180</width>
 					<!-- KODI-RD-IL CHANGES -->
@@ -156,12 +181,13 @@
 					<visible>String.IsEqual(ListItem.DBtype,movie) + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(WatchedProgress)) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
-				
+
 				<!-- KODI-RD-IL ADDITION -->
-					<control type="image">
+				<!-- Studio logo image, shown when the studio name is available -->
+				<control type="image">
 					<animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
 					<visible>!String.IsEmpty(ListItem.Studio)</visible>
-					<left>22</left>
+					<right>22</right>
 					<top>0</top>
 					<width>120</width>
 					<height>90</height>
@@ -169,34 +195,38 @@
 					<texture>kodirdil/studiologos/$INFO[ListItem.Studio].png</texture>
 				</control>
 				<!-- ##################### -->
-				
+				<!-- Group for displaying the rating circle -->
 				<control type="group">
-				<left>433</left>
-				<top>-14</top>
-				<include content="RatingCircle">
-					<param name="animation" value="True" />
-					<param name="left">-73</param>
-					<param name="top">18</param>
-					<param name="width">119</param>
-					<param name="height">119</param>
-					<param name="label-left">-16</param>
-					<param name="label-top">38</param>
-					<param name="cornerdiffuse">overlays/overlaybg4.png</param>
-				</include>
+					<left>50r</left>
+					<top>-14</top>
+					<include content="RatingCircle">
+						<param name="animation" value="True" />
+						<param name="left">-73</param>
+						<param name="top">18</param>
+						<param name="width">119</param>
+						<param name="height">119</param>
+						<param name="label-left">-16</param>
+						<param name="label-top">38</param>
+						<param name="cornerdiffuse">overlays/overlaybg4.png</param>
+					</include>
+				</control>
 			</control>
-			</control>
+
+			<!-- Group for TV show specific elements -->
 			<control type="group">
 				<visible>String.IsEqual(ListItem.DBtype,tvshow)</visible>
 				<control type="image">
-					<left>4</left>
+					<right>4</right>
 					<top>570</top>
 					<width>476</width>
 					<height>150</height>
 					<texture colordiffuse="CCFFFFFF">overlays/overlayfade51.png</texture>
 					<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
 				</control>
+
+				<!-- Label showing total seasons and episodes of the TV show -->
 				<control type="label">
-					<left>-20</left>
+					<right>20</right>
 					<top>684</top>
 					<width>435</width>
 					<height>24</height>
@@ -208,8 +238,10 @@
 					<align>right</align>
 					<aligny>center</aligny>
 				</control>
+
+				<!-- Image for indicating played episodes -->
 				<control type="image">
-					<left>425</left>
+					<right>435</right>
 					<top>684</top>
 					<width>24</width>
 					<height>24</height>
@@ -218,8 +250,10 @@
 					<aligny>center</aligny>
 				</control>
 			</control>
+
+			<!-- Progress bar indicating how much of the item has been played -->
 			<control type="progress">
-				<left>4</left>
+				<right>4</right>
 				<top>702</top>
 				<width>476</width>
 				<height>1</height>
@@ -230,20 +264,21 @@
 			</control>
 		</control>
 	</include>
-	
+
 	<!-- KODI-RD-IL ADDITION -->
+	<!-- Include for displaying the ClearArt logo -->
 	<include name="Poster_View_Art_Logo">
 	<param name="top" default="-105"/>
-	<param name="left" default="50%"/>
+	<param name="right" default="50%"/>
 		<definition>
 			<control type="group">
 				<visible>Control.IsVisible(51)</visible>
 				<control type="image">
 					<top>-150</top>
-					<left>42%</left>
+					<right>42%</right>
 					<width>320</width>
 					<height>130</height>
-					<aspectratio scalediffuse="false" align="left" aligny="center">keep</aspectratio>
+					<aspectratio scalediffuse="false" align="right" aligny="center">keep</aspectratio>
 					<texture>$VAR[ClearArtLogo]</texture>
 				</control>
 			</control>
