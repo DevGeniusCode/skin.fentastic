@@ -29,7 +29,7 @@
 				<include>Visible_Left</include>
 				<include>OpenClose_Left</include>
 				<control type="fixedlist" id="51">
-					<right>-10</right>
+					<left>20</left>
 					<top>0</top>
 					<width>110%</width>
 					<height>704</height>
@@ -51,7 +51,7 @@
 					<!-- Defines the layout for each item in the list -->
 					<itemlayout width="215">
 						<control type="group">
-							<right>-118</right>
+							<left>1912</left> <!-- 1690% -->
 							<top>18</top>
 							<include>InfoWallMovieLayout</include>
 						</control>
@@ -61,7 +61,7 @@
 					<focusedlayout width="490">
 						<control type="group">
 							<control type="group">
-								<right>-220</right>
+								<left>-220</left>
 								<top>18</top>
 								<visible>Container.OnScrollPrevious</visible>
 								<visible>Control.IsVisible(20000)</visible>
@@ -69,7 +69,7 @@
 								<include>InfoWallMovieLayout</include>
 							</control>
 							<control type="group">
-								<right>-40</right>
+								<left>-40</left>
 								<top>18</top>
 								<visible>Container.OnScrollNext</visible>
 								<visible>Control.IsVisible(20000)</visible>
@@ -108,9 +108,9 @@
 
 					<!-- Title label for the selected item -->
 					<control type="label">
-						<right>695</right>
+						<align>right</align>
+						<right>600</right>
 						<top>322</top>
-						<left>50</left>
 						<height>40</height>
 						<label>$INFO[ListItem.Label]$VAR[ListSubLabelVar]</label>
 						<font>font45_title</font>
@@ -122,7 +122,8 @@
 
 					<!-- Textbox for the plot description -->
 					<control type="textbox">
-						<right>645</right>
+						<align>right</align>
+						<right>600</right>
 						<top>402</top>
 						<height>335</height>
 						<left>115</left>
@@ -176,7 +177,7 @@
 					<!-- ##################### -->
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
-					<align>left</align>
+					<align>right</align>
 					<visible>String.IsEqual(ListItem.DBtype,movie) + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(WatchedProgress)) + !Integer.IsEqual(Container($PARAM[id]).ListItem.Property(WatchedProgress),0)</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
@@ -196,19 +197,19 @@
 				<!-- ##################### -->
 				<!-- Group for displaying the rating circle -->
 				<control type="group">
-				<right>433</right>
-				<top>-14</top>
-				<include content="RatingCircle">
-					<param name="animation" value="True" />
-					<param name="left">-73</param>
-					<param name="top">18</param>
-					<param name="width">119</param>
-					<param name="height">119</param>
-					<param name="label-left">-16</param>
-					<param name="label-top">38</param>
-					<param name="cornerdiffuse">overlays/overlaybg4.png</param>
-				</include>
-			</control>
+					<left>50r</left>
+					<top>-14</top>
+					<include content="RatingCircle">
+						<param name="animation" value="True" />
+						<param name="left">-73</param>
+						<param name="top">18</param>
+						<param name="width">119</param>
+						<param name="height">119</param>
+						<param name="label-left">-16</param>
+						<param name="label-top">38</param>
+						<param name="cornerdiffuse">overlays/overlaybg4.png</param>
+					</include>
+				</control>
 			</control>
 
 			<!-- Group for TV show specific elements -->
@@ -225,7 +226,7 @@
 
 				<!-- Label showing total seasons and episodes of the TV show -->
 				<control type="label">
-					<right>-20</right>
+					<right>20</right>
 					<top>684</top>
 					<width>435</width>
 					<height>24</height>
@@ -240,7 +241,7 @@
 
 				<!-- Image for indicating played episodes -->
 				<control type="image">
-					<right>425</right>
+					<right>435</right>
 					<top>684</top>
 					<width>24</width>
 					<height>24</height>
@@ -260,6 +261,15 @@
 				<midtexture colordiffuse="button_focus2" border="3">progress/texturebg_alt_white.png</midtexture>
 				<info>ListItem.PercentPlayed</info>
 				<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+			</control>
+			<control type="image">
+				<left>1</left>
+				<top>1</top>
+				<width>482</width>
+				<height>721</height>
+				<visible>Control.HasFocus(51)</visible>
+				<animation effect="fade" time="100">VisibleChange</animation>
+				<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
 			</control>
 		</control>
 	</include>
