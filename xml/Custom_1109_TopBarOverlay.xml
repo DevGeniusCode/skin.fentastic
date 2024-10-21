@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1109">
+	<!-- Start timer for the top bar overlay when the window loads -->
 	<onload>Skin.TimerStart(1110_topbaroverlay)</onload>
 	<visible>Window.IsActive(fullscreenvideo) | Window.IsActive(visualisation)</visible>
 	<visible>Window.IsActive(seekbar) | Window.IsActive(pvrosdchannels) | Window.IsActive(pvrchannelguide)</visible>
@@ -7,10 +8,15 @@
 	<include>Animation_TopSlide</include>
 	<zorder>0</zorder>
 	<controls>
+		<!-- Group containing the top bar overlay controls -->
 		<control type="group">
 			<visible>![Player.ShowInfo | Window.IsActive(fullscreeninfo) | Player.ShowTime | Window.IsActive(videoosd) | Window.IsActive(musicosd) | Window.IsActive(playerprocessinfo) | Window.IsActive(pvrosdchannels) | Window.IsActive(pvrchannelguide)] + [!String.IsEmpty(Player.SeekNumeric) | Player.Seeking | Player.HasPerformedSeek(3) | Player.Forwarding | Player.Rewinding | Player.Paused] | !String.IsEmpty(PVR.ChannelNumberInput)</visible>
+
+			<!-- Animations for fading and sliding the top bar based on player state -->
 			<animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
 			<animation effect="slide" start="0,0" end="0,-80" time="300" condition="Player.Paused + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(1110_topbaroverlay),5)">Conditional</animation>
+
+			<!-- Background image for the top bar -->
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
@@ -18,6 +24,8 @@
 				<height>55</height>
 				<texture colordiffuse="D0FFFFFF" border="0,55,0,0">frame/osdfade.png</texture>
 			</control>
+
+			<!-- Label showing the seek label (time or position during seek) -->
 			<control type="label">
 				<left>25</left>
 				<top>6</top>
@@ -27,6 +35,8 @@
 				<font>font30_title</font>
 				<shadowcolor>black</shadowcolor>
 			</control>
+
+			<!-- Label centered in the top bar showing seek time or other info -->
 			<control type="label">
 				<centerleft>50%</centerleft>
 				<top>0</top>
@@ -37,6 +47,8 @@
 				<font>font37</font>
 				<visible>!Player.ChannelPreviewActive | VideoPlayer.HasEpg</visible>
 			</control>
+
+			<!-- Label showing player chapter information -->
 			<control type="label">
 				<right>25</right>
 				<top>6</top>
@@ -47,6 +59,8 @@
 				<label>$INFO[player.chapter,[COLOR button_focus]$LOCALIZE[21396]:[/COLOR] ]$INFO[Player.ChapterCount,/]</label>
 				<visible>!VideoPlayer.Content(LiveTV) + player.chaptercount</visible>
 			</control>
+
+			<!-- Label showing PVR timeshift information -->
 			<control type="label">
 				<right>25</right>
 				<top>6</top>
@@ -57,6 +71,8 @@
 				<label>[COLOR button_focus]$LOCALIZE[31026][/COLOR] $INFO[PVR.TimeshiftCur] (-$INFO[PVR.TimeshiftOffset])</label>
 				<visible>VideoPlayer.Content(LiveTV) + PVR.IsTimeShift</visible>
 			</control>
+
+			<!-- Progress bar showing player buffer cache progress -->
 			<control type="progress">
 				<left>0</left>
 				<top>55</top>
@@ -67,6 +83,8 @@
 				<midtexture>colors/white50.png</midtexture>
 				<visible>!VideoPlayer.Content(LiveTV)</visible>
 			</control>
+
+			<!-- Progress bar showing player progress -->
 			<control type="progress">
 				<left>0</left>
 				<top>55</top>
@@ -77,6 +95,8 @@
 				<midtexture colordiffuse="accent_color">colors/white.png</midtexture>
 				<visible>!VideoPlayer.Content(LiveTV)</visible>
 			</control>
+
+			<!-- Seekbar slider control -->
 			<control type="slider">
 				<left>0</left>
 				<top>50</top>
@@ -88,8 +108,12 @@
 				<info>Player.Seekbar</info>
 				<visible>!VideoPlayer.Content(LiveTV) + [Player.Seeking | Player.HasPerformedSeek(3) | Player.Paused]</visible>
 			</control>
+
+			<!-- Group for Live TV PVR progress and EPG bars -->
 			<control type="group">
 				<visible>VideoPlayer.Content(LiveTV)</visible>
+
+				<!-- Group for when seek is enabled and EPG is available -->
 				<control type="group">
 					<visible>Player.SeekEnabled + VideoPlayer.HasEPG</visible>
 					<include content="PVRProgress">
@@ -99,6 +123,8 @@
 						<param name="epg_bar_height" value="8"/>
 					</include>
 				</control>
+
+				<!-- Group for when seek is enabled and no EPG is available -->
 				<control type="group">
 					<visible>Player.SeekEnabled + !VideoPlayer.HasEPG</visible>
 					<include content="PVRProgress">
@@ -106,6 +132,8 @@
 						<param name="ts_bar_height" value="16"/>
 					</include>
 				</control>
+
+				<!-- Group for when seek is disabled and EPG is available -->
 				<control type="group">
 					<visible>!Player.SeekEnabled + VideoPlayer.HasEPG</visible>
 					<include content="PVRProgress">
@@ -114,6 +142,8 @@
 					</include>
 				</control>
 			</control>
+
+			<!-- Slider for Live TV timeshift seekbar -->
 			<control type="slider">
 				<left>0</left>
 				<top>50</top>
@@ -125,6 +155,8 @@
 				<info>PVR.TimeShiftSeekbar</info>
 				<visible>VideoPlayer.Content(LiveTV) + [Player.Seeking | Player.HasPerformedSeek(3) | Player.Paused] + !Player.ChannelPreviewActive</visible>
 			</control>
+
+			<!-- Progress ranges for editing the player playlist -->
 			<control type="ranges">
 				<left>0</left>
 				<top>55</top>
@@ -137,6 +169,7 @@
 				<info>Player.Editlist</info>
 			</control>
 			<control type="ranges">
+				<!-- Progress bar for player cuts (edits in video) -->
 				<left>0</left>
 				<top>67</top>
 				<width>100%</width>
@@ -146,6 +179,7 @@
 				<info>Player.Cuts</info>
 			</control>
 			<control type="ranges">
+				<!-- Progress bar for scene markers (e.g., key moments) -->
 				<left>0</left>
 				<top>67</top>
 				<width>100%</width>
@@ -155,6 +189,7 @@
 				<info>Player.SceneMarkers</info>
 			</control>
 			<control type="ranges">
+				<!-- Progress bar for chapters in the video -->
 				<left>0</left>
 				<top>67</top>
 				<width>100%</width>
@@ -167,8 +202,11 @@
 		<control type="group">
 			<animation effect="slide" end="0,-200" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
 			<animation effect="slide" start="0,-200" end="0,0" time="300" tween="cubic" easing="out">VisibleChange</animation>
+
+			<!-- Group visibility based on player and window states -->
 			<visible>Player.ShowInfo | Window.IsActive(fullscreeninfo) | Player.ShowTime | Window.IsActive(videoosd) | Window.IsActive(musicosd) | Window.IsActive(playerprocessinfo) | Window.IsActive(pvrosdchannels) | Window.IsActive(pvrchannelguide) + ![Player.Seeking | Player.HasPerformedSeek(3) | Player.Forwarding | Player.Rewinding | Player.Paused] | !String.IsEmpty(PVR.ChannelNumberInput)</visible>
-			<depth>DepthBars</depth>
+
+			<!-- Image for background fade in the group -->
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
@@ -188,9 +226,12 @@
 				<aspectratio aligny="center" align="left">keep</aspectratio>
 			</control>
 			<!-- ##################### -->
-			
+
+			<!-- Group for displaying player logos and labels -->
 			<control type="group">
 				<animation effect="slide" end="90,0" time="0" condition="Skin.HasSetting(touchmode)">conditional</animation>
+
+				<!-- List of logos and labels -->
 				<control type="grouplist">
 					<visible>!String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(clearlogo))</visible>
 					<top>10</top>
@@ -199,11 +240,15 @@
 					<height>100</height>
 					<itemgap>10</itemgap>
 					<orientation>horizontal</orientation>
+
+					<!-- Image for clear logo -->
 					<control type="image">
 						<width>300</width>
 						<texture>$VAR[PlayerClearLogoVar]</texture>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
 					</control>
+
+					<!-- Label for additional information -->
 					<control type="label">
 						<align>left</align>
 						<aligny>center</aligny>
@@ -213,11 +258,15 @@
 						<scroll>true</scroll>
 					</control>
 				</control>
+
+				<!-- Group for showing breadcrumbs or labels when logos are absent -->
 				<control type="group">
 					<visible>!Window.IsActive(pvrosdchannels) + !Window.IsActive(pvrchannelguide)</visible>
 					<visible>String.IsEmpty(Player.Art(clearlogo))</visible>
 					<visible>String.IsEmpty(Player.Art(tvshow.clearlogo))</visible>
 					<animation effect="fade" time="150">VisibleChange</animation>
+
+					<!-- Breadcrumbs label -->
 					<left>20</left>
 					<right>400</right>
 					<control type="label">
@@ -227,6 +276,8 @@
 						<top>7</top>
 						<height>50</height>
 					</control>
+
+					<!-- Sub-label below the breadcrumbs -->
 					<control type="label">
 						<top>60</top>
 						<label>$VAR[OSDSubLabelVar]</label>
@@ -235,9 +286,13 @@
 					</control>
 				</control>
 			</control>
+
+			<!-- Group for time and finish time display -->
 			<control type="group">
 				<visible>!Window.IsVisible(extendedprogressdialog)</visible>
 				<animation effect="fade" time="150">VisibleChange</animation>
+
+				<!-- Label for displaying the system time -->
 				<control type="label">
 					<font>font_clock</font>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -248,6 +303,8 @@
 					<align>right</align>
 					<label>$INFO[System.Time]</label>
 				</control>
+
+				<!-- Group list for showing finish time information -->
 				<control type="grouplist">
 					<right>24</right>
 					<top>74</top>
@@ -257,6 +314,8 @@
 					<itemgap>5</itemgap>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
+
+					<!-- Label for showing player finish time -->
 					<control type="label">
 						<label>$INFO[Player.FinishTime,$LOCALIZE[31080]: ]</label>
 						<shadowcolor>text_shadow</shadowcolor>
@@ -265,6 +324,8 @@
 						<visible>!String.isempty(Player.Duration)</visible>
 						<visible>Player.HasVideo + ![Player.HasGame | VideoPlayer.HasEpg]</visible>
 					</control>
+
+					<!-- Label for showing PVR event finish time -->
 					<control type="label">
 						<label>$INFO[PVR.EpgEventFinishTime,$LOCALIZE[31080]: ]</label>
 						<shadowcolor>text_shadow</shadowcolor>
@@ -272,6 +333,8 @@
 						<width>auto</width>
 						<visible>VideoPlayer.HasEpg</visible>
 					</control>
+
+					<!-- Mute icon for when the player is muted -->
 					<control type="image">
 						<top>2</top>
 						<left>0</left>
