@@ -219,11 +219,11 @@
 			<control type="image">
 			<!-- Studio Logo in player -->
 				<top>5</top>
-				<right>800</right>
+				<centerright>50%</centerright>
 				<width>240</width>
 				<height>120</height>
 				<texture>special://skin/media/kodirdil/studiologos/$INFO[VideoPlayer.Studio].png</texture>
-				<aspectratio aligny="center" align="left">keep</aspectratio>
+				<aspectratio>keep</aspectratio>
 			</control>
 			<!-- ##################### -->
 
