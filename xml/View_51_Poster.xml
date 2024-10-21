@@ -80,11 +80,11 @@
 						</control>
 					</itemlayout>
 
-					<!-- Focused layout for the list, displaying adjacent items -->
+					<!-- Focused layout for the list, animated adjacent items -->
 					<focusedlayout width="490">
 						<control type="group">
 							<control type="group">
-								<left>-220</left>
+								<left>2014</left>
 								<top>18</top>
 								<visible>Container.OnScrollPrevious</visible>
 								<visible>Control.IsVisible(20000)</visible>
@@ -92,7 +92,7 @@
 								<include>InfoWallMovieLayout</include>
 							</control>
 							<control type="group">
-								<left>-40</left>
+								<left>1990</left>
 								<top>18</top>
 								<visible>Container.OnScrollNext</visible>
 								<visible>Control.IsVisible(20000)</visible>
