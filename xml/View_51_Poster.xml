@@ -362,7 +362,7 @@
 				<control type="image">
 					<animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
 					<visible>!String.IsEmpty(ListItem.Studio)</visible>
-					<right>22</right>
+					<left>455r</left>
 					<top>0</top>
 					<width>120</width>
 					<height>90</height>
@@ -401,7 +401,7 @@
 
 				<!-- Label showing total seasons and episodes of the TV show -->
 				<control type="label">
-					<right>20</right>
+					<right>60</right>
 					<top>684</top>
 					<width>435</width>
 					<height>24</height>
@@ -416,7 +416,7 @@
 
 				<!-- Image for indicating played episodes -->
 				<control type="image">
-					<right>435</right>
+                    <left>50r</left>
 					<top>684</top>
 					<width>24</width>
 					<height>24</height>
