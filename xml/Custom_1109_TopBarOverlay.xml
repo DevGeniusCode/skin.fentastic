@@ -227,7 +227,7 @@
 			</control>
 			<!-- ##################### -->
 
-			<!-- Group for displaying player logos and labels -->
+			<!-- Group for displaying media logo and details -->
 			<control type="group">
 				<animation effect="slide" end="90,0" time="0" condition="Skin.HasSetting(touchmode)">conditional</animation>
 
@@ -235,21 +235,15 @@
 				<control type="grouplist">
 					<visible>!String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(clearlogo))</visible>
 					<top>10</top>
-					<left>20</left>
-					<right>400</right>
+					<right>20</right>
+					<left>400</left>
 					<height>100</height>
 					<itemgap>10</itemgap>
 					<orientation>horizontal</orientation>
-
-					<!-- Image for clear logo -->
-					<control type="image">
-						<width>300</width>
-						<texture>$VAR[PlayerClearLogoVar]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-					</control>
-
+					<align>right</align>
 					<!-- Label for additional information -->
 					<control type="label">
+					<width min="xx" max="xx">auto</width>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>font13</font>
@@ -257,6 +251,13 @@
 						<shadowcolor>text_shadow</shadowcolor>
 						<scroll>true</scroll>
 					</control>
+					<!-- Image for clear logo -->
+					<control type="image">
+						<width>300</width>
+						<texture>$VAR[PlayerClearLogoVar]</texture>
+						<aspectratio aligny="center" align="center">keep</aspectratio>
+					</control>
+
 				</control>
 
 				<!-- Group for showing breadcrumbs or labels when logos are absent -->
@@ -267,23 +268,25 @@
 					<animation effect="fade" time="150">VisibleChange</animation>
 
 					<!-- Breadcrumbs label -->
-					<left>20</left>
-					<right>400</right>
+					<right>20</right>
+					<left>400</left>
 					<control type="label">
+						<align>right</align>
 						<label>$VAR[NowPlayingBreadcrumbsVar]</label>
 						<font>font45</font>
 						<shadowcolor>text_shadow</shadowcolor>
 						<top>7</top>
 						<height>50</height>
 					</control>
-
 					<!-- Sub-label below the breadcrumbs -->
 					<control type="label">
+						<align>right</align>
 						<top>60</top>
 						<label>$VAR[OSDSubLabelVar]</label>
 						<shadowcolor>text_shadow</shadowcolor>
 						<height>60</height>
 					</control>
+
 				</control>
 			</control>
 
