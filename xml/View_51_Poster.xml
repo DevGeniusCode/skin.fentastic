@@ -11,6 +11,18 @@
 			<onclick>noop</onclick>
 			<visible>Control.IsVisible(51)</visible>
 		</control>
+        <!-- dark background poster -->
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>100%</width>
+            <height>100%</height>
+            <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+            <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+            <animation effect="fade" time="200">VisibleChange</animation>
+            <texture colordiffuse="button_focus2">dialogs/dialog-bg-nobo.png</texture>
+            <visible>Control.IsVisible(51)</visible>
+        </control>
 
 		<!-- This section defines the poster view type -->
 		<control type="group">
@@ -130,12 +142,164 @@
 						<!-- ##################### -->
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
+						<!-- ratings                    	-->
+						<control type="grouplist">
+						<height>90</height>
+						<orientation>horizontal</orientation>
+						<itemgap>25</itemgap>
+						<aligny>center</aligny>
+						<visible>[String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)] + !String.IsEmpty(ListItem.Genre)</visible>
 
-					<!-- Textbox for the plot description -->
+						<!-- KODI-RD-IL ADDITION -->
+						<align>right</align>
+                        <right>600</right>
+                        <top>400</top>
+						<!-- ##################### -->
+
+						<control type="grouplist">
+							<width>60</width>
+							<orientation>vertical</orientation>
+							<itemgap>5</itemgap>
+							<align>center</align>
+							<visible>![String.IsEmpty(Window.Property(fentastic.metascore)) | Skin.HasSetting(Disable.MetacriticRating)]</visible>
+							<control type="image">
+								<width>60</width>
+								<height>36</height>
+								<aspectratio>keep</aspectratio>
+								<align>center</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(fentastic.metascoreImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>42</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[Window.Property(fentastic.metascore)]</label>
+								<textcolor>unfocused_text</textcolor>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>60</width>
+							<orientation>vertical</orientation>
+							<itemgap>5</itemgap>
+							<align>center</align>
+							<visible>![String.IsEmpty(Window.Property(fentastic.tomatoMeter)) | Skin.HasSetting(Disable.RTCRating)]</visible>
+							<control type="image">
+								<width>60</width>
+								<height>36</height>
+								<aspectratio>keep</aspectratio>
+								<align>center</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(fentastic.tomatoImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>42</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[Window.Property(fentastic.tomatoMeter)]</label>
+								<textcolor>unfocused_text</textcolor>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>60</width>
+							<orientation>vertical</orientation>
+							<itemgap>5</itemgap>
+							<align>center</align>
+							<visible>![String.IsEmpty(Window.Property(fentastic.tomatoUserMeter)) | Skin.HasSetting(Disable.RTARating)]</visible>
+							<control type="image">
+								<width>60</width>
+								<height>36</height>
+								<aspectratio>keep</aspectratio>
+								<align>center</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(fentastic.tomatoUserImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>42</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[Window.Property(fentastic.tomatoUserMeter)]</label>
+								<textcolor>unfocused_text</textcolor>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>60</width>
+							<orientation>vertical</orientation>
+							<itemgap>5</itemgap>
+							<align>center</align>
+							<visible>![String.IsEmpty(Window.Property(fentastic.imdbRating)) | Skin.HasSetting(Disable.IMDbRating)]</visible>
+							<control type="image">
+								<width>60</width>
+								<height>36</height>
+								<aspectratio>keep</aspectratio>
+								<align>center</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(fentastic.imdbImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="60">auto</width>
+								<height>42</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[Window.Property(fentastic.imdbRating)]</label>
+								<textcolor>unfocused_text</textcolor>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>77</width>
+							<orientation>vertical</orientation>
+							<itemgap>5</itemgap>
+							<align>center</align>
+							<visible>![String.IsEmpty(Window.Property(fentastic.popularRating)) | Skin.HasSetting(Disable.IMDbPopularRating)]</visible>
+							<control type="image">
+								<width>87</width>
+								<height>36</height>
+								<aspectratio>keep</aspectratio>
+								<align>center</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(fentastic.popularImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="87">auto</width>
+								<height>42</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[Window.Property(fentastic.popularRating)]</label>
+								<textcolor>unfocused_text</textcolor>
+							</control>
+						</control>
+						<control type="grouplist">
+							<width>65</width>
+							<orientation>vertical</orientation>
+							<itemgap>8</itemgap>
+							<align>center</align>
+							<visible>![String.IsEmpty(Window.Property(fentastic.tmdbRating)) | Skin.HasSetting(Disable.TMDbRating)]</visible>
+							<control type="image">
+								<width>65</width>
+								<height>33</height>
+								<aspectratio>keep</aspectratio>
+								<align>center</align>
+								<aligny>center</aligny>
+								<texture>$INFO[Window.Property(fentastic.tmdbImage)]</texture>
+							</control>
+							<control type="label">
+								<width max="65">auto</width>
+								<height>42</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[Window.Property(fentastic.tmdbRating)]</label>
+								<textcolor>unfocused_text</textcolor>
+							</control>
+						</control>
+					</control>
+										<!-- Textbox for the plot description -->
 					<control type="textbox">
 						<align>right</align>
 						<right>600</right>
-						<top>402</top>
+						<top>492</top>
 						<height>335</height>
 						<left>115</left>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasActiveModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
@@ -148,7 +312,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<!-- This group defines the main layout for the poster view on the left side -->
+			<!-- This group defines the main layout for the poster view on the right side -->
 			<centertop>50%</centertop>
 			<height>670</height>
 			<right>101</right>
