@@ -820,20 +820,23 @@
 			<include>BottomBar</include>
 			<control type="group">
 				<visible>!Skin.HasSetting(TrailerPlaying)</visible>
-				<animation effect="slide" time="700" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
+				<animation effect="slide" time="700" start="492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 				<depth>DepthContentPanel</depth>
-				<include>OpenClose_Left</include>
+				<include>OpenClose_Right</include>
 				<include content="ContentPanel">
 					<param name="width" value="900" />
+					<param name="align" value="right" />
+					<param name="right" value="0" />
+					<param name="left" value="482r" />
 				</include>
 				<control type="group">
-					<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
+					<animation effect="slide" time="300" start="492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 					<visible allowhiddenfocus="true">![String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)]</visible>
 					<!-- TODO Add sideblade panel for direct editing of widgets, hiding sections, other shortcuts -->
 					<control type="fixedlist" id="9000">
-						<left>25</left>
+						<right>25</right>
 						<top>240</top>
-            <width>492</width>
+						<width>492</width>
 						<bottom>-10</bottom>
 						<movement>7</movement>
 						<focusposition>0</focusposition>
@@ -861,7 +864,7 @@
 							
 							<!-- KODI-RD-IL ADDITION - MENU ICON -->
 							<control type="image">
-								<left>5</left>
+								<right>5</right>
 								<top>1</top>
 								<width>95</width>
 								<height>95</height>
@@ -871,7 +874,7 @@
 							
 							<control type="label">
 								<include>FocusBounce</include>
-								<left>65</left>
+								<right>100</right>
 								<top>0</top>
 								<height>95</height>
 								<width>315</width>
@@ -889,7 +892,7 @@
 							</control>
 							<control type="label">
 								<include>FocusBounce</include>
-								<left>65</left>
+								<right>100</right>
 								<top>0</top>
 								<height>95</height>
 								<width>315</width>
@@ -910,7 +913,7 @@
 						
 						<!-- KODI-RD-IL ADDITION - MENU ICON -->
 						<control type="image">
-							<left>5</left>
+							<right>5</right>
 							<top>1</top>
 							<width>95</width>
 							<height>95</height>
@@ -919,7 +922,7 @@
 						<!-- ########### -->
 						
 							<control type="label">
-								<left>65</left>
+								<right>100</right>
 								<top>0</top>
 								<height>95</height>
 								<width>315</width>
@@ -1043,69 +1046,71 @@
 					<control type="grouplist" id="700">
 						<orientation>horizontal</orientation>
 						<itemgap>0</itemgap>
-            <left>45</left>
+						<right>45</right>
 						<width>380</width>
 						<height>110</height>
 						<top>115</top>
 						<onup>SetFocus(9000,99,absolute)</onup>
 						<ondown>SetFocus(9000,0,absolute)</ondown>
-						<onright>2000</onright>
+						<onleft>2000</onleft>
 						<align>justify</align>
-						<include content="IconButton" condition="Skin.HasSetting(OneClickClose)">
+						<include content="IconButton">
 							<param name="control_id" value="801" />
-							<param name="onclick" value="Quit()" />
-							<param name="icon" value="icons/power.png" />
-							<param name="label" value="$LOCALIZE[33060]" />
-						</include>
-						<include content="IconButton" condition="!Skin.HasSetting(OneClickClose)">
-							<param name="control_id" value="802" />
-							<param name="onclick" value="ActivateWindow(shutdownmenu)" />
-							<param name="icon" value="icons/power.png" />
-							<param name="label" value="$LOCALIZE[33060]" />
-						</include>
-						<include content="IconButton">
-							<param name="control_id" value="803" />
-							<param name="onclick" value="ActivateWindow(settings)" />
-							<param name="icon" value="icons/settings.png" />
-							<param name="label" value="$LOCALIZE[21417]" />
-						</include>
-						<include content="IconButton" condition="Skin.HasSetting(NoSearchResultsWindow)">
-							<param name="control_id" value="804" />
-							<param name="onclick" value="ActivateWindow(1107)" />
-							<param name="icon" value="icons/search.png" />
-							<param name="label" value="$LOCALIZE[137]" />
-						</include>
-						<include content="IconButton" condition="!Skin.HasSetting(NoSearchResultsWindow) + Skin.HasSetting(DefaultSearchWindowBehavior)">
-							<param name="control_id" value="805" />
-							<param name="onclick" value="RunScript(script.fentastic.helper,mode=search_input)" />
-							<param name="icon" value="icons/search.png" />
-							<param name="label" value="$LOCALIZE[137]" />
-						</include>
-						<include content="IconButton" condition="!Skin.HasSetting(NoSearchResultsWindow) + !Skin.HasSetting(DefaultSearchWindowBehavior)">
-							<param name="control_id" value="806" />
-							<param name="onclick" value="RunScript(script.fentastic.helper,mode=open_search_window)" />
-							<param name="icon" value="icons/search.png" />
-							<param name="label" value="$LOCALIZE[137]" />
-						</include>
-						<include content="IconButton">
-							<param name="control_id" value="807" />
 							<param name="onclick" value="Fullscreen" />
 							<param name="icon" value="icons/now-playing/fullscreen.png" />
 							<param name="label" value="$LOCALIZE[31000]" />
 							<param name="visible" value="Player.HasMedia" />
 						</include>
+						<include content="IconButton" condition="Skin.HasSetting(NoSearchResultsWindow)">
+							<param name="control_id" value="802" />
+							<param name="onclick" value="ActivateWindow(1107)" />
+							<param name="icon" value="icons/search.png" />
+							<param name="label" value="$LOCALIZE[137]" />
+						</include>
+						<include content="IconButton" condition="!Skin.HasSetting(NoSearchResultsWindow) + Skin.HasSetting(DefaultSearchWindowBehavior)">
+							<param name="control_id" value="803" />
+							<param name="onclick" value="RunScript(script.fentastic.helper,mode=search_input)" />
+							<param name="icon" value="icons/search.png" />
+							<param name="label" value="$LOCALIZE[137]" />
+						</include>
+						<include content="IconButton" condition="!Skin.HasSetting(NoSearchResultsWindow) + !Skin.HasSetting(DefaultSearchWindowBehavior)">
+							<param name="control_id" value="804" />
+							<param name="onclick" value="RunScript(script.fentastic.helper,mode=open_search_window)" />
+							<param name="icon" value="icons/search.png" />
+							<param name="label" value="$LOCALIZE[137]" />
+						</include>
+						<include content="IconButton">
+							<param name="control_id" value="805" />
+							<param name="onclick" value="ActivateWindow(settings)" />
+							<param name="icon" value="icons/settings.png" />
+							<param name="label" value="$LOCALIZE[21417]" />
+						</include>
+						<include content="IconButton" condition="Skin.HasSetting(OneClickClose)">
+							<param name="control_id" value="806" />
+							<param name="onclick" value="Quit()" />
+							<param name="icon" value="icons/power.png" />
+							<param name="label" value="$LOCALIZE[33060]" />
+						</include>
+						<include content="IconButton" condition="!Skin.HasSetting(OneClickClose)">
+							<param name="control_id" value="807" />
+							<param name="onclick" value="ActivateWindow(shutdownmenu)" />
+							<param name="icon" value="icons/power.png" />
+							<param name="label" value="$LOCALIZE[33060]" />
+						</include>
 					</control>
 				</control>
 
 				<control type="group">
+                    <align>right</align>
+                    <right>-110</right>
 					<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 					<width>550</width>
 					<visible>String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)</visible>
-					<include>OpenClose_Left</include>
+					<include>OpenClose_Right</include>
 					<control type="image">
-						<left>30</left>
+						<rightcenter>50%</rightcenter>
 						<top>50</top>
-						<width>395</width>
+						<width>410</width>
 						<height>153</height>
 						<texture background="true">$VAR[ClearlogoVar]</texture>
 						<aspectratio align="center">keep</aspectratio>
@@ -1114,24 +1119,24 @@
 						<top>75</top>
 						<!-- KODI-RD-IL CHANGES -->
 						<left>10</left>
-						<width>430</width>
+						<width>410</width>
 						<aligny>center</aligny>
 						<height>98</height>
 						<font>font36_title</font>
 						<!-- KODI-RD-IL CHANGES -->
 						<label>[COLOR yellow]$INFO[ListItem.Label][/COLOR]</label>
 						<!-- ##################### -->
-						
+
 						<!-- KODI-RD-IL ADDITION -->
-						<align>right</align>
+						<align>center</align>
 						<!-- ##################### -->
-						
+
 						<visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
 					</control>
 					<control type="group">
 						<visible>Skin.HasSetting(Disable.RatingsINF) | String.IsEmpty(Skin.String(mdblist_api_key))</visible>
 						<control type="textbox">
-							<left>30</left>
+							<right>30</right>
 							<top>239</top>
 							<width>410</width>
 							<bottom>60</bottom>
@@ -1145,7 +1150,7 @@
 							<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
 						</control>
 						<control type="textbox">
-							<left>30</left>
+							<right>30</right>
 							<top>323</top>
 							<width>410</width>
 							<bottom>60</bottom>
@@ -1159,7 +1164,7 @@
 							<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
 						</control>
 						<control type="textbox">
-							<left>30</left>
+							<right>30</right>
 							<top>213</top>
 							<width>410</width>
 							<aligny>center</aligny>
@@ -1178,7 +1183,7 @@
 						</control>
 					</control>
 					<include condition="![Skin.HasSetting(Disable.RatingsINF) | String.IsEmpty(Skin.String(mdblist_api_key))]" content="RatingsInfoPanel">
-						<param name="left" value="30" />
+						<param name="right" value="30" />
 						<param name="width" value="410" />
 						<param name="top" value="239" />
 						<param name="ratings_spacing" value="7" />
@@ -1228,36 +1233,38 @@
 				</control>
 			</control>
 			<control type="group">
-        <animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
-        <visible>![String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)] + !Skin.HasSetting(TrailerPlaying)</visible>
+				<animation effect="slide" time="300" start="492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
+				<visible>![String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) |
+					String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)] +
+					!Skin.HasSetting(TrailerPlaying)
+				</visible>
 				<depth>DepthBars</depth>
 				<animation effect="slide" end="0,-90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
 				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 				<!-- KODI-RD-IL CHANGES -->
 				<top>30</top>
-				<left>90</left>
-		<!-- KODI-RD-IL ADDITION -->
-		<control type="image">
-			<left>-45</left>
-			<top>-70</top>
-			<aspectratio>keep</aspectratio>
-			<width>350</width>
-			<height>208</height>
-			<texture>special://skin/media/kodirdil/group_logo/kodirdil-vendor_logo.png</texture>
-		</control>
-		<!-- ##################### -->
+				<left>462r</left>
+				<!-- KODI-RD-IL ADDITION -->
+				<control type="image">
+					<centerright>50%</centerright>
+					<top>-70</top>
+					<aspectratio>keep</aspectratio>
+					<width>350</width>
+					<height>208</height>
+					<texture>special://skin/media/kodirdil/group_logo/kodirdil-vendor_logo.png</texture>
+				</control>
+				<control type="label">
+					<description>KODI-RD-IL - Kodi Version</description>
+					<align>right</align>
+					<right>15</right>
+					<bottom>0</bottom>
+					<height>50</height>
+					<font>font25_title</font>
+					<label>$LOCALIZE[700062]: $INFO[System.BuildVersionShort]</label>
+				</control>
+			    <!-- ##################### -->
 			</control>
-		<!-- KODI-RD-IL ADDITION -->
-		<control type="label">
-			<description>KODI-RD-IL - Kodi Version</description>
-			<left>15</left>
-			<bottom>0</bottom>
-			<height>50</height>
-			<font>font25_title</font>
-			<label>$LOCALIZE[700062]: $INFO[System.BuildVersionShort]</label>
-		</control>
-		<!-- ##################### -->
 		</control>
 	</controls>
 </window>
