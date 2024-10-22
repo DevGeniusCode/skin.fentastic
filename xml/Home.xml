@@ -30,7 +30,7 @@
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<!-- WIDGETS GROUP -->
 			<control type="group" id="2000">
-				<left>462</left>
+				<right>462</right>
 				<include>OpenClose_Right</include>
 				<visible>!Skin.HasSetting(TrailerPlaying)</visible>
 				<animation effect="slide" time="700" start="1380,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
@@ -815,7 +815,8 @@
 				</control>
 			</control>
 			<include content="TopBar">
-				<param name="breadcrumbs_label" value="" />
+				<!--				TODO להפוך את הפריטים למעלה-->
+				<param name="breadcrumbs_label" value=""/>
 			</include>
 			<include>BottomBar</include>
 			<control type="image">
@@ -849,7 +850,7 @@
 						<movement>7</movement>
 						<focusposition>0</focusposition>
 						<onfocus>ClearProperty(listposition,home)</onfocus>
-						<onright>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onright>
+						<onleft>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onleft>
 						<onup>700</onup>
 						<ondown>700</ondown>
 						<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -918,7 +919,7 @@
 							</control>
 						</focusedlayout>
 						<itemlayout height="90">
-						
+
 						<!-- KODI-RD-IL ADDITION - MENU ICON -->
 						<control type="image">
 							<right>5</right>
@@ -928,7 +929,7 @@
 							<texture>$INFO[ListItem.Art(thumb)]</texture>
 						</control>
 						<!-- ########### -->
-						
+
 							<control type="label">
 								<right>100</right>
 								<top>0</top>
