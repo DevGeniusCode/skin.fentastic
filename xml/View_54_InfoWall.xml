@@ -1243,6 +1243,7 @@
 				<height>100%</height>
 				<onleft>9000</onleft>
 				<onright>531</onright>
+				<orientation>verticalRtl</orientation>
 				<onup condition="Integer.IsGreater(Container.NumPages,1)">54</onup>
 				<onup condition="!Integer.IsGreater(Container.NumPages,1)">9000</onup>
 				<ondown>54</ondown>
