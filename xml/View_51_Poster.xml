@@ -52,7 +52,7 @@
 				<include>Visible_Left</include>
 				<include>OpenClose_Left</include>
 				<control type="fixedlist" id="51">
-					<left>20</left>
+					<right>-10</right>
 					<top>0</top>
 					<width>110%</width>
 					<height>704</height>
@@ -74,7 +74,7 @@
 					<!-- Defines the layout for each item in the list -->
 					<itemlayout width="215">
 						<control type="group">
-							<left>1912</left> <!-- 1690% -->
+							<left>-118</left>
 							<top>18</top>
 							<include>InfoWallMovieLayout</include>
 						</control>
@@ -84,7 +84,7 @@
 					<focusedlayout width="490">
 						<control type="group">
 							<control type="group">
-								<left>2014</left>
+								<right>-220</right>
 								<top>18</top>
 								<visible>Container.OnScrollPrevious</visible>
 								<visible>Control.IsVisible(20000)</visible>
@@ -92,7 +92,7 @@
 								<include>InfoWallMovieLayout</include>
 							</control>
 							<control type="group">
-								<left>1990</left>
+								<right>-40</right>
 								<top>18</top>
 								<visible>Container.OnScrollNext</visible>
 								<visible>Control.IsVisible(20000)</visible>
@@ -133,6 +133,8 @@
 					<control type="label">
 						<align>right</align>
 						<right>600</right>
+						<top>322</top>
+						<left>50</left>
 						<top>322</top>
 						<height>40</height>
 						<label>$INFO[ListItem.Label]$VAR[ListSubLabelVar]</label>
