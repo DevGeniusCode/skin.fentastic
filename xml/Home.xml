@@ -818,6 +818,14 @@
 				<param name="breadcrumbs_label" value="" />
 			</include>
 			<include>BottomBar</include>
+			<control type="image">
+				<right>0</right>
+				<top>0</top>
+				<width>462</width>
+				<height>100%</height>
+				<texture colordiffuse="button_focus2">dialogs/dialog-bg-nobo.png</texture>
+				<visible>!Player.HasMedia</visible>
+			</control>
 			<control type="group">
 				<visible>!Skin.HasSetting(TrailerPlaying)</visible>
 				<animation effect="slide" time="700" start="492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
@@ -851,7 +859,7 @@
 								<!-- KODI-RD-IL ADDITION - FOCUS MENU BLUE BACKGRUOND -->
 								<control type="image">
 									<visible>!Skin.HasSetting(show_widget_menu_border)</visible>
-									<left>0</left>
+									<right>0</right>
 									<top>0</top>
 									<width>395</width>
 									<height>95</height>
@@ -1103,7 +1111,7 @@
 				<control type="group">
                     <align>right</align>
                     <right>-110</right>
-					<animation effect="slide" time="300" start="-492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
+					<animation effect="slide" time="300" start="492,0" end="0,0" tween="sine" easing="inout">VisibleChange</animation>
 					<width>550</width>
 					<visible>String.IsEqual(ListItem.DBtype,movie) | String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,season) | String.IsEqual(ListItem.DBtype,episode)</visible>
 					<include>OpenClose_Right</include>
