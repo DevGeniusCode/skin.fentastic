@@ -870,7 +870,7 @@
 								<!-- ########### -->
 							</control>
 							<!-- SideMenu Focused Icons -->
-							
+
 							<!-- KODI-RD-IL ADDITION - MENU ICON -->
 							<control type="image">
 								<right>5</right>
@@ -880,7 +880,7 @@
 								<texture>$INFO[ListItem.Art(thumb)]</texture>
 							</control>
 							<!-- ########### -->
-							
+
 							<control type="label">
 								<include>FocusBounce</include>
 								<right>100</right>
@@ -888,11 +888,11 @@
 								<height>95</height>
 								<width>315</width>
 								<aligny>center</aligny>
-								
+
 								<!-- KODI-RD-IL ADDITION -->
 								<align>right</align>
 								<!-- ########### -->
-								
+
 								<font>font45</font>
 								<textcolor>darkgrey</textcolor>
 								<label>$INFO[ListItem.Label]</label>
@@ -906,11 +906,11 @@
 								<height>95</height>
 								<width>315</width>
 								<aligny>center</aligny>
-								
+
 								<!-- KODI-RD-IL ADDITION -->
 								<align>right</align>
 								<!-- ########### -->
-								
+
 								<font>font52_title</font>
 								<label>$INFO[ListItem.Label]</label>
 								<textcolor>unfocused_text</textcolor>
@@ -936,11 +936,11 @@
 								<height>95</height>
 								<width>315</width>
 								<aligny>center</aligny>
-								
+
 								<!-- KODI-RD-IL ADDITION -->
 								<align>right</align>
 								<!-- ########### -->
-								
+
 								<font>font45</font>
 								<textcolor>darkgrey</textcolor>
 								<label>$INFO[ListItem.Label]</label>
@@ -1150,11 +1150,11 @@
 							<width>410</width>
 							<bottom>60</bottom>
 							<label>$VAR[InfoPanel]</label>
-						
+
 							<!-- KODI-RD-IL ADDITION -->
 							<align>right</align>
 							<!-- ##################### -->
-							
+
 							<textcolor>unfocused_text</textcolor>
 							<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
 						</control>
@@ -1164,11 +1164,11 @@
 							<width>410</width>
 							<bottom>60</bottom>
 							<label>$VAR[InfoPanelEpisode]</label>
-						
+
 							<!-- KODI-RD-IL ADDITION -->
 							<align>right</align>
 							<!-- ##################### -->
-							
+
 							<textcolor>unfocused_text</textcolor>
 							<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
 						</control>
@@ -1183,11 +1183,11 @@
 							<!-- KODI-RD-IL CHANGES -->
 							<label>$LOCALIZE[700015] $INFO[ListItem.Season], $LOCALIZE[700016] $INFO[ListItem.Episode]</label>
 							<!-- ##################### -->
-						
+
 							<!-- KODI-RD-IL ADDITION -->
 							<align>right</align>
 							<!-- ##################### -->
-							
+
 							<visible>String.IsEqual(ListItem.DbType,episode)</visible>
 						</control>
 					</control>
