@@ -815,7 +815,6 @@
 				</control>
 			</control>
 			<include content="TopBar">
-				<!--				TODO להפוך את הפריטים למעלה-->
 				<param name="breadcrumbs_label" value=""/>
 			</include>
 			<include>BottomBar</include>

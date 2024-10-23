@@ -913,13 +913,15 @@
 					<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 				</control>
 				<control type="grouplist">
-					<width>900</width>
+					<align>right</align>
+					<width>422</width>
 					<include content="TopBarLabels">
 						<param name="breadcrumbs_label" value="$PARAM[breadcrumbs_label]" />
 					</include>
 					<visible>Player.HasMedia</visible>
 				</control>
 				<control type="grouplist">
+					<align>right</align>
 					<width>1800</width>
 					<include content="TopBarLabels">
 						<param name="breadcrumbs_label" value="$PARAM[breadcrumbs_label]" />
@@ -928,6 +930,8 @@
 				</control>
 				<control type="button">
 					<top>0</top>
+					<right>0</right>
+					<align>right</align>
 					<width>200</width>
 					<height>100</height>
 					<label></label>
@@ -939,7 +943,8 @@
 				<control type="label" id="18900">
 					<top>50</top>
 					<label>$PARAM[sublabel]</label>
-					<left>35</left>
+					<right>35</right>
+					<align>right</align>
 					<shadowcolor>text_shadow</shadowcolor>
 					<height>100</height>
 					<width>900</width>
@@ -949,55 +954,40 @@
 				</control>
 				<control type="grouplist">
 					<top>0</top>
-					<align>right</align>
-					<right>20</right>
+					<align>left</align>
+					<left>20</left>
 					<height>200</height>
 					<orientation>horizontal</orientation>
 					<width>1100</width>
 					<itemgap>10</itemgap>
 					<visible>!Window.IsVisible(extendedprogressdialog) + !Window.IsActive(fullscreenvideo) + !Skin.HasSetting(TrailerPlaying)</visible>
 					<animation effect="fade" time="150">VisibleChange</animation>
-					<control type="group">
-						<width>600</width>
-						<visible>!Control.IsVisible(503) + Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
-						<animation effect="fade" time="200">VisibleChange</animation>
-						<control type="grouplist">
-							<left>-75</left>
-							<orientation>horizontal</orientation>
-							<height>38</height>
-							<top>14</top>
-							<align>right</align>
-							<width>660</width>
-							<itemgap>5</itemgap>
-							<usecontrolcoords>true</usecontrolcoords>
-							<control type="image">
-								<top>4</top>
-								<width>32</width>
-								<height>32</height>
-								<aspectratio>keep</aspectratio>
-								<texture colordiffuse="accent_color">$VAR[NowPlayingIconVar]</texture>
-							</control>
-							<control type="label">
-								<label>$INFO[Player.Title]</label>
-								<textcolor>unfocused_text</textcolor>
-								<font>font27</font>
-								<shadowcolor>text_shadow</shadowcolor>
-								<height>35</height>
-								<width min="1" max="602">auto</width>
-							</control>
-						</control>
-						<control type="label" id="7700">
-							<label>$VAR[NowPlayingSublabelVar]</label>
-							<left>-44</left>
-							<top>44</top>
-							<font>font12</font>
-							<textcolor>grey</textcolor>
-							<shadowcolor>text_shadow</shadowcolor>
-							<height>25</height>
-							<width>630</width>
-							<align>right</align>
-							<scroll>true</scroll>
-						</control>
+					<control type="label">
+						<font>font_clock</font>
+						<textcolor>unfocused_text</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+						<height>200</height>
+						<width>auto</width>
+						<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
+						<label>$INFO[System.Time]</label>
+					</control>
+					<control type="image">
+						<width>60</width>
+						<height>100</height>
+						<fadetime>300</fadetime>
+						<aspectratio aligny="center" align="left">keep</aspectratio>
+						<texture colordiffuse="unfocused_text">$INFO[Weather.FanartCode,weather/small/,.png]</texture>
+						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
+					</control>
+					<control type="label">
+						<font>font_clock_small</font>
+						<height>100</height>
+						<width>auto</width>
+						<aligny>center</aligny>
+						<align>right</align>
+						<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits] [COLOR accent_color][B] • [/B][/COLOR]</label>
+						<textcolor>unfocused_text</textcolor>
+						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
 					</control>
 					<control type="group">
 						<visible>Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia</visible>
@@ -1025,36 +1015,53 @@
 							<textcolor>unfocused_text</textcolor>
 						</control>
 					</control>
-					<control type="image">
-						<width>60</width>
-						<height>100</height>
-						<fadetime>300</fadetime>
-						<aspectratio aligny="center" align="left">keep</aspectratio>
-						<texture colordiffuse="unfocused_text">$INFO[Weather.FanartCode,weather/small/,.png]</texture>
-						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
-					</control>
-					<control type="label">
-						<font>font_clock_small</font>
-						<height>100</height>
-						<width>auto</width>
-						<aligny>center</aligny>
+				</control>
+				<control type="group">
+					<align>right</align>
+					<right>462</right>
+					<visible>!Window.IsVisible(extendedprogressdialog) + !Window.IsActive(fullscreenvideo) + !Skin.HasSetting(TrailerPlaying)</visible>
+					<visible>!Control.IsVisible(503) + Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+					<animation effect="fade" time="200">VisibleChange</animation>
+					<control type="grouplist">
+						<right>0</right>
+						<orientation>horizontal</orientation>
+						<height>38</height>
+						<top>14</top>
 						<align>right</align>
-						<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits] [COLOR accent_color][B] • [/B][/COLOR]</label>
-						<textcolor>unfocused_text</textcolor>
-						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
+						<width>660</width>
+						<itemgap>5</itemgap>
+						<usecontrolcoords>true</usecontrolcoords>
+						<control type="image">
+							<top>4</top>
+							<width>32</width>
+							<height>32</height>
+							<aspectratio>keep</aspectratio>
+							<texture colordiffuse="accent_color">$VAR[NowPlayingIconVar]</texture>
+						</control>
+						<control type="label">
+							<label>$INFO[Player.Title]</label>
+							<textcolor>unfocused_text</textcolor>
+							<font>font27</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<height>35</height>
+							<width min="1" max="602">auto</width>
+						</control>
 					</control>
-					<control type="label">
-						<font>font_clock</font>
-						<textcolor>unfocused_text</textcolor>
+					<control type="label" id="7700">
+						<label>$VAR[NowPlayingSublabelVar]</label>
+						<right>0</right>
+						<top>44</top>
+						<font>font12</font>
+						<textcolor>grey</textcolor>
 						<shadowcolor>text_shadow</shadowcolor>
-						<height>200</height>
-						<width>auto</width>
-						<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
-						<label>$INFO[System.Time]</label>
+						<height>25</height>
+						<width>630</width>
+						<align>right</align>
+						<scroll>true</scroll>
 					</control>
 				</control>
 				<control type="grouplist">
-					<right>10</right>
+					<left>10</left>
 					<top>70</top>
 					<width>800</width>
 					<height>100</height>
@@ -1092,7 +1099,7 @@
 				</control>
 				<control type="label" id="23000">
 					<top>0</top>
-					<left>0</left>
+					<right>0</right>
 					<label>$INFO[ListItem.SortLetter]</label>
 					<font>font_MainMenu</font>
 					<width>100%</width>
@@ -1110,8 +1117,8 @@
 		</definition>
 	</include>
 	<include name="TopBarLabels">
-		<left>35</left>
-		<description>Left side of top bar</description>
+		<right>35</right>
+		<description>right side of top bar</description>
 		<top>-7</top>
 		<height>100</height>
 		<orientation>horizontal</orientation>
@@ -1121,38 +1128,63 @@
 		<animation effect="slide" end="0,16" time="200" reversible="true" condition="String.IsEmpty(Control.GetLabel(18900))">Conditional</animation>
 		<animation effect="slide" end="70,0" time="200" reversible="true" condition="Control.IsVisible(799)">Conditional</animation>
 		<control type="label">
-			<label>$PARAM[breadcrumbs_label]</label>
-			<include>BreadcrumbsLabel</include>
-		</control>
-		<control type="label">
-			<label>$INFO[Container.ShowTitle, / ]</label>
-			<include>BreadcrumbsLabel</include>
-			<visible>!String.IsEmpty(Container.ShowTitle) + !String.IsEqual(Container.ShowTitle,Container.FolderName)</visible>
-		</control>
-		<control type="label">
-			<label>$INFO[Container.FolderName, [B]»[/B] ]</label>
-			<include>BreadcrumbsLabel</include>
-			<visible>![Container.Content()]</visible>
-			<visible>![Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRSearch.xml) | Window.IsActive(MyVideoNav.xml)]</visible>
-		</control>
-		<control type="label">
-			<label>$INFO[Container.PluginCategory, [B]»[/B] ]</label>
-			<include>BreadcrumbsLabel</include>
-			<visible>!String.isempty(Container.PluginCategory)</visible>
-		</control>
-		<control type="label">
-			<label>$INFO[Control.GetLabel(10),: ]</label>
-			<include>BreadcrumbsLabel</include>
-			<visible>!String.IsEqual(Control.GetLabel(10),$LOCALIZE[16100]) + Window.IsActive(videos)</visible>
-		</control>
-		<control type="label">
+			<!-- Viewed/Not Viewed Filter-->
 			<left>10</left>
+			<align>left</align>
 			<label>($LOCALIZE[31052])</label>
 			<include>BreadcrumbsLabel</include>
 			<visible>Container.Filtered</visible>
 		</control>
+		<control type="label">
+			<!-- All Videos Filter-->
+			<align>left</align>
+			<label>$INFO[Control.GetLabel(10),: ]</label>
+			<include>BreadcrumbsLabel</include>
+			<visible>!String.IsEqual(Control.GetLabel(10),All videos) + Window.IsActive(videos)</visible>
+		</control>
+		<control type="label">
+			<!-- Plugin Category -->
+			<label>$INFO[Container.PluginCategory]</label>
+			<include>BreadcrumbsLabel</include>
+			<visible>!String.isempty(Container.PluginCategory)</visible>
+		</control>
+		<control type="label">
+			<!-- Show Title -->
+			<label> \ </label>
+			<include>BreadcrumbsLabel</include>
+			<visible>Container.Content(episodes) | !String.IsEmpty(Container.ShowTitle) + !String.IsEqual(Container.ShowTitle,Container.FolderName)</visible>
+		</control>
+		<control type="label">
+			<!-- Show Title -->
+			<label>$INFO[ListItem.TVshowTitle]</label>
+			<include>BreadcrumbsLabel</include>
+			<visible>Container.Content(episodes) | !String.IsEmpty(Container.ShowTitle) + !String.IsEqual(Container.ShowTitle,Container.FolderName)</visible>
+		</control>
+		<control type="label">
+			<label> [B]«[/B] </label>
+			<include>BreadcrumbsLabel</include>
+			<visible>!String.isempty(Container.PluginCategory)</visible>
+		</control>
+<!--		<control type="label">-->
+<!--			&lt;!&ndash; Folder Name &ndash;&gt;-->
+<!--			<label>$INFO[Container.FolderName]</label>-->
+<!--			<include>BreadcrumbsLabel</include>-->
+<!--			<visible>![Container.Content()]</visible>-->
+<!--			<visible>![Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRSearch.xml) | Window.IsActive(MyVideoNav.xml)]</visible>-->
+<!--		</control>-->
+<!--		<control type="label">-->
+<!--			<label> [B]«[/B] </label>-->
+<!--			<include>BreadcrumbsLabel</include>-->
+<!--			<visible>![Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRSearch.xml) | Window.IsActive(MyVideoNav.xml)]</visible>-->
+<!--		</control>-->
+		<control type="label">
+			<!-- Main Menu Name -->
+			<label>$PARAM[breadcrumbs_label]</label>
+			<include>BreadcrumbsLabel</include>
+		</control>
 	</include>
 	<include name="BreadcrumbsLabel">
+		<align>right</align>
 		<font>font45</font>
 		<textcolor>unfocused_text</textcolor>
 		<shadowcolor>text_shadow</shadowcolor>

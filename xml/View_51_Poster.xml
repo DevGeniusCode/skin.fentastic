@@ -65,7 +65,8 @@
 					<onup>9000</onup>
 					<ondown>5199</ondown>
 					<onleft>51</onleft>
-					<hitrect x="100" y="0" w="800" h="400" />
+<!--					<hitrect x="100" y="0" w="800" h="400" />-->
+<!--					<hitrect x="576r" y="0" w="476" h="716" />-->
 					<!-- Visibility conditions for the list based on the content type -->
 					<visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(games)</visible>
 					<preloaditems>1</preloaditems>
@@ -84,7 +85,7 @@
 					<focusedlayout width="490">
 						<control type="group">
 							<control type="group">
-								<right>-220</right>
+								<left>-220</left>
 								<top>18</top>
 								<visible>Container.OnScrollPrevious</visible>
 								<visible>Control.IsVisible(20000)</visible>
@@ -92,7 +93,7 @@
 								<include>InfoWallMovieLayout</include>
 							</control>
 							<control type="group">
-								<right>-40</right>
+								<left>-40</left>
 								<top>18</top>
 								<visible>Container.OnScrollNext</visible>
 								<visible>Control.IsVisible(20000)</visible>
