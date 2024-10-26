@@ -1,4 +1,29 @@
-# FENtastic Skin for Kodi Omega
+# FENtastic Skin for Kodi Omega + RTL Layout
+
+## Purpose
+
+This skin for Kodi is designed to improve the user experience for Right-To-Left (RTL) language speakers. By implementing an RTL layout, it enhances navigation and accessibility, making it more intuitive for users who read from right to left.
+
+## Features
+
+- **RTL Layout**: Fully optimized for RTL languages, ensuring a seamless experience.
+- **Enhanced Navigation**: Intuitive design that aligns with RTL reading patterns.
+- **Visual Improvements**: Aesthetic updates that complement the RTL format.
+
+## Before & After
+
+### Home Screen:
+
+#### Before: ![Before](resources/docs/home_screen_before.png) 
+#### After: ![After](resources/docs/home_screen_after.png)
+
+### Poster View:
+
+#### Before: ![Before](resources/docs/poster_view_before.png) 
+#### After: ![After](resources/docs/poster_view_after.png)
+
+Explore the transformation and enjoy a better Kodi experience tailored for RTL users!
+
 
 **IMPORTANT INFO:** I am currently not accepting **ANY** feature requests.
 
