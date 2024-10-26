@@ -13,17 +13,35 @@
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="19012"/>
         </include>
-        <include content="WidgetListBigEpisodes">
-            <param name="content_path" value="plugin://plugin.video.twilight/?mode=navigator.build_shortcut_folder_list&amp;name=%D7%A1%D7%A8%D7%98%D7%99%D7%9D+-+%D7%9C%D7%A4%D7%99+%D7%A8%D7%A9%D7%AA%D7%95%D7%AA&amp;iconImage=networks&amp;shortcut_folder=True&amp;external_list_item=True"/>
-            <param name="widget_header" value="[B][COLOR yellow]רשתות סטרימינג[/COLOR][/B]"/>
-            <param name="widget_target" value="videos"/>
-            <param name="list_id" value="19013"/>
-        </include>
-        <include content="WidgetListBigEpisodes">
+        <include content="WidgetListCategoryStacked">
             <param name="content_path" value="plugin://plugin.video.twilight/?name=32470&amp;iconImage=genres&amp;mode=navigator.genres&amp;menu_type=movie"/>
             <param name="widget_header" value="[B][COLOR yellow]ז'אנרים[/COLOR][/B]"/>
             <param name="widget_target" value="videos"/>
             <param name="list_id" value="19014"/>
+        </include>
+        <include content="WidgetListPosterStacked">
+            <param name="content_path" value="$INFO[Window(Home).Property(fentastic.19014.path)]"/>
+            <param name="widget_header" value="$INFO[Window(Home).Property(fentastic.19014.label)]"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="190141"/>
+        </include>
+        <include content="WidgetListCategoryStacked">
+            <param name="content_path" value="plugin://plugin.video.twilight/?mode=navigator.build_shortcut_folder_list&amp;name=%D7%A1%D7%A8%D7%98%D7%99%D7%9D+-+%D7%9C%D7%A4%D7%99+%D7%A8%D7%A9%D7%AA%D7%95%D7%AA&amp;iconImage=networks&amp;shortcut_folder=True&amp;external_list_item=True"/>
+            <param name="widget_header" value="סרטים - לפי רשתות"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="19013"/>
+        </include>
+        <include content="WidgetListPosterStacked">
+            <param name="content_path" value="$INFO[Window(Home).Property(fentastic.19013.path)]"/>
+            <param name="widget_header" value="$INFO[Window(Home).Property(fentastic.19013.label)]"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="190131"/>
+        </include>
+        <include content="WidgetListPoster">
+            <param name="content_path" value="plugin://plugin.video.twilight/?mode=trakt.list.build_trakt_list&amp;user=drorg&amp;slug=sratim-wizdom-ktuvit&amp;list_type=liked_lists&amp;list_name=Sratim+-+%D7%A1%D7%A8%D7%98%D7%99%D7%9D+-+wizdom+ktuvit"/>
+            <param name="widget_header" value="כתוביות חדשות"/>
+            <param name="widget_target" value="videos"/>
+            <param name="list_id" value="19015"/>
         </include>
     </include>
 </includes>
