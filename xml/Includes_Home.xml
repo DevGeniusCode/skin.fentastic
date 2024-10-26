@@ -18,7 +18,7 @@
 		<param name="label_focus_collections">$INFO[Container($PARAM[list_id]).ListItem.Label,[B]| [/B]]</param>
 		<definition>
 			<control type="group" id="$PARAM[list_id]665">
-				<left>75</left>
+				<right>20</right>
 				<top>80</top>
 				<onback>9000</onback>
 				<height>90</height>
@@ -26,6 +26,8 @@
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
 				<visible>$PARAM[visible]</visible>
 				<control type="grouplist">
+					<align>right</align>
+					<right>0</right>
 					<width>1350</width>
 					<orientation>horizontal</orientation>
 					<itemgap>30</itemgap>
@@ -240,7 +242,7 @@
 		<param name="label_focus_collections">$INFO[Container($PARAM[list_id]).ListItem.Label,[B]| [/B]]</param>
 		<definition>
 			<control type="group" id="$PARAM[list_id]665">
-				<left>75</left>
+				<right>20</right>
 				<top>80</top>
 				<onback>9000</onback>
 				<height>90</height>
@@ -248,6 +250,8 @@
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
 				<visible>$PARAM[visible]</visible>
 				<control type="grouplist">
+					<align>right</align>
+					<right>0</right>
 					<width>1350</width>
 					<orientation>horizontal</orientation>
 					<itemgap>30</itemgap>
@@ -483,8 +487,8 @@
 			<control type="fixedlist" id="$PARAM[list_id]">
 				<left>0</left>
 				<top>115</top>
-				<onright>$PARAM[list_id]</onright>
-				<orientation>horizontal</orientation>
+				<onleft>$PARAM[list_id]</onleft>
+				<orientation>horizontalRtl</orientation>
 				<movement>5</movement>
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
 				<right>0</right>
@@ -495,7 +499,8 @@
 				</include>
 				<itemlayout width="225" height="393">
 					<control type="group">
-						<left>68</left>
+						<right>68</right>
+						<left>462r</left>
 						<top>15</top>
 						<include content="InfoWallMovieLayout">
 						<param name="focused" value="false" />
@@ -506,7 +511,8 @@
 				<focusedlayout width="225" height="393">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
-						<left>68</left>
+						<right>68</right>
+						<left>462r</left>
 						<top>15</top>
 						<include content="InfoWallMovieLayout">
 						<param name="focused" value="true" />
@@ -533,8 +539,8 @@
 			<control type="fixedlist" id="$PARAM[list_id]">
 				<left>0</left>
 				<top>115</top>
-				<onright>$PARAM[list_id]</onright>
-				<orientation>horizontal</orientation>
+				<onleft>$PARAM[list_id]</onleft>
+				<orientation>horizontalrtl</orientation>
 				<movement>4</movement>
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
 				<right>0</right>
@@ -545,7 +551,8 @@
 				</include>
 				<itemlayout width="269" height="393">
 					<control type="group">
-						<left>68</left>
+						<right>68</right>
+						<left>546r</left>
 						<top>15</top>
 						<include content="BigInfoWallMovieLayout">
 						<param name="focused" value="false" />
@@ -556,7 +563,8 @@
 				<focusedlayout width="269" height="393">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
-						<left>68</left>
+						<right>68</right>
+						<left>546r</left>
 						<top>15</top>
 						<include content="BigInfoWallMovieLayout">
 						<param name="focused" value="true" />
@@ -583,16 +591,18 @@
         <top>115</top> 
         <right>0</right>
         <height>410</height>
-				<onright>$PARAM[list_id]</onright>
-				<orientation>horizontal</orientation>
+				<onleft>$PARAM[list_id]</onleft>
+				<orientation>horizontalRtl</orientation>
 				<movement>5</movement>
         <include content="WidgetListCommonStacked">
           <param name="list_id" value="$PARAM[list_id]" />
         </include>
         <itemlayout width="225" height="393">
           <control type="group">
-            <left>68</left>
-            <top>15</top>
+			<align>right</align>
+			<right>68</right>
+			<left>462r</left>
+			<top>15</top>
             <include content="InfoWallMovieLayout">
             <param name="focused" value="false" />
 						<param name="list_id" value="$PARAM[list_id]" />
@@ -602,8 +612,10 @@
         <focusedlayout width="225" height="393">
           <control type="group">
             <depth>DepthContentPopout</depth>
-            <left>68</left>
-            <top>15</top>
+			  <align>right</align>
+			  <right>68</right>
+			  <left>462r</left>
+			  <top>15</top>
             <include content="InfoWallMovieLayout">
             <param name="focused" value="true" />
 						<param name="list_id" value="$PARAM[list_id]" />
@@ -629,16 +641,17 @@
         <top>115</top> 
         <right>0</right>
         <height>465</height>
-				<onright>$PARAM[list_id]</onright>
-				<orientation>horizontal</orientation>
+				<onleft>$PARAM[list_id]</onleft>
+				<orientation>horizontalRtl</orientation>
 				<movement>4</movement>
         <include content="WidgetListCommonStacked">
           <param name="list_id" value="$PARAM[list_id]" />
         </include>
         <itemlayout width="269" height="393">
           <control type="group">
-            <left>68</left>
-            <top>15</top>
+			  <right>68</right>
+			  <left>546r</left>
+			  <top>15</top>
             <include content="BigInfoWallMovieLayout">
             <param name="focused" value="false" />
 						<param name="list_id" value="$PARAM[list_id]" />
@@ -648,8 +661,9 @@
         <focusedlayout width="269" height="393">
           <control type="group">
             <depth>DepthContentPopout</depth>
-            <left>68</left>
-            <top>15</top>
+			  <right>68</right>
+			  <left>546r</left>
+			  <top>15</top>
             <include content="BigInfoWallMovieLayout">
             <param name="focused" value="true" />
 						<param name="list_id" value="$PARAM[list_id]" />
@@ -675,8 +689,8 @@
 			<control type="fixedlist" id="$PARAM[list_id]">
 				<left>0</left>
 				<top>115</top>
-				<onright>$PARAM[list_id]</onright>
-				<orientation>horizontal</orientation>
+				<onleft>$PARAM[list_id]</onleft>
+				<orientation>horizontalRtl</orientation>
 				<movement>3</movement>
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
 				<right>0</right>
@@ -687,7 +701,8 @@
 				</include>
 				<itemlayout width="337" height="347">
 					<control type="group">
-						<left>68</left>
+						<right>68</right>
+						<left>684r</left>
 						<top>15</top>
 						<include content="WideInfoWallMovieLayout">
 						<param name="focused" value="false" />
@@ -698,7 +713,8 @@
 				<focusedlayout width="337" height="347">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
-						<left>68</left>
+						<right>68</right>
+						<left>684r</left>
 						<top>15</top>
 						<include content="WideInfoWallMovieLayout">
 						<param name="focused" value="true" />
@@ -725,8 +741,8 @@
 			<control type="fixedlist" id="$PARAM[list_id]">
 				<left>0</left>
 				<top>115</top>
-				<onright>$PARAM[list_id]</onright>
-				<orientation>horizontal</orientation>
+				<onleft>$PARAM[list_id]</onleft>
+				<orientation>horizontalRtl</orientation>
 				<movement>2</movement>
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
 				<right>0</right>
@@ -737,7 +753,8 @@
 				</include>
 				<itemlayout width="448" height="347">
 					<control type="group">
-						<left>68</left>
+						<right>68</right>
+						<left>903r</left>
 						<top>15</top>
 						<include content="BigWideInfoWallMovieLayout">
 						<param name="focused" value="false" />
@@ -748,7 +765,8 @@
 				<focusedlayout width="448" height="347">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
-						<left>68</left>
+						<right>68</right>
+						<left>903r</left>
 						<top>15</top>
 						<include content="BigWideInfoWallMovieLayout">
 						<param name="focused" value="true" />
@@ -774,8 +792,8 @@
 			<control type="fixedlist" id="$PARAM[list_id]">
 				<left>0</left>
 				<top>115</top>
-				<onright>$PARAM[list_id]</onright>
-				<orientation>horizontal</orientation>
+				<onleft>$PARAM[list_id]</onleft>
+				<orientation>horizontalRtl</orientation>
 				<movement>3</movement>
 				<right>0</right>
 				<height>307</height>
@@ -785,7 +803,8 @@
 				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
 				<itemlayout width="337" height="347">
 					<control type="group">
-						<left>68</left>
+						<right>68</right>
+						<left>684r</left>
 						<top>15</top>
 						<include content="WideInfoWallMovieLayout">
 						<param name="focused" value="false" />
@@ -796,7 +815,8 @@
 				<focusedlayout width="337" height="347">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
-						<left>68</left>
+						<right>68</right>
+						<left>684r</left>
 						<top>15</top>
 						<include content="WideInfoWallMovieLayout">
 						<param name="focused" value="true" />
@@ -822,8 +842,8 @@
 			<control type="fixedlist" id="$PARAM[list_id]">
 				<left>0</left>
 				<top>115</top>
-				<onright>$PARAM[list_id]</onright>
-				<orientation>horizontal</orientation>
+				<onleft>$PARAM[list_id]</onleft>
+				<orientation>horizontalRtl</orientation>
 				<movement>2</movement>
 				<right>0</right>
 				<height>366</height>
@@ -833,7 +853,8 @@
 				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
 				<itemlayout width="448" height="347">
 					<control type="group">
-						<left>68</left>
+						<right>68</right>
+						<left>903r</left>
 						<top>15</top>
 						<include content="BigWideInfoWallMovieLayout">
 						<param name="focused" value="false" />
@@ -844,7 +865,8 @@
 				<focusedlayout width="448" height="347">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
-						<left>68</left>
+						<right>68</right>
+						<left>903r</left>
 						<top>15</top>
 						<include content="BigWideInfoWallMovieLayout">
 						<param name="focused" value="true" />
@@ -882,8 +904,8 @@
 				<top>101</top>
 				<right>0</right>
 				<height>381</height>
-				<onright>$PARAM[list_id]</onright>
-				<orientation>horizontal</orientation>
+				<onleft>$PARAM[list_id]</onleft>
+				<orientation>horizontalRtl</orientation>
 				<movement>3</movement>
 				<include content="WidgetListCommon">
 					<param name="list_id" value="$PARAM[list_id]"/>
@@ -892,8 +914,10 @@
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
 				<itemlayout width="337" height="550">
 					<control type="group">
-						<left>70</left>
+						<right>68</right>
+						<left>686r</left>
 						<top>5</top>
+						<align>centre</align>
 						<include content="InfoWallEpisodeLayout">
 							<param name="focused" value="false" />
 							<param name="list_id" value="$PARAM[list_id]" />
@@ -906,8 +930,10 @@
 				</itemlayout>
 				<focusedlayout width="337" height="550">
 					<control type="group">
+						<align>centre</align>
 						<depth>DepthContentPopout</depth>
-						<left>70</left>
+						<right>68</right>
+						<left>686r</left>
 						<top>5</top>
 						<include content="InfoWallEpisodeLayout">
 							<param name="focused" value="true" />
@@ -949,8 +975,8 @@
 				<top>106</top>
 				<right>0</right>
 				<height>441</height>
-				<onright>$PARAM[list_id]</onright>
-				<orientation>horizontal</orientation>
+				<onleft>$PARAM[list_id]</onleft>
+				<orientation>horizontalRtl</orientation>
 				<movement>2</movement>
 				<include content="WidgetListCommon">
 					<param name="list_id" value="$PARAM[list_id]"/>
@@ -959,7 +985,8 @@
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
 				<itemlayout width="448" height="550">
 					<control type="group">
-						<left>70</left>
+						<right>68</right>
+						<left>903r</left>
 						<top>5</top>
 						<include content="BigInfoWallEpisodeLayout">
 							<param name="focused" value="false" />
@@ -974,7 +1001,8 @@
 				<focusedlayout width="448" height="550">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
-						<left>70</left>
+						<right>68</right>
+						<left>903r</left>
 						<top>5</top>
 						<include content="BigInfoWallEpisodeLayout">
 							<param name="focused" value="true" />
@@ -1014,8 +1042,8 @@
 				<top>101</top>
 				<right>0</right>
 				<height>381</height>
-				<onright>$PARAM[list_id]</onright>
-				<orientation>horizontal</orientation>
+				<onleft>$PARAM[list_id]</onleft>
+				<orientation>horizontalRtl</orientation>
 				<movement>3</movement>
 				<include content="WidgetListCommonStacked">
 					<param name="list_id" value="$PARAM[list_id]"/>
@@ -1023,7 +1051,8 @@
 				<visible>$PARAM[visible]</visible>
 				<itemlayout width="337" height="550">
 					<control type="group">
-						<left>70</left>
+						<right>68</right>
+						<left>686r</left>
 						<top>5</top>
 						<include content="InfoWallEpisodeLayout">
 							<param name="focused" value="false" />
@@ -1038,7 +1067,8 @@
 				<focusedlayout width="337" height="550">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
-						<left>70</left>
+						<right>68</right>
+						<left>686r</left>
 						<top>5</top>
 						<include content="InfoWallEpisodeLayout">
 							<param name="focused" value="true" />
@@ -1078,8 +1108,8 @@
 				<top>106</top>
 				<right>0</right>
 				<height>441</height>
-				<onright>$PARAM[list_id]</onright>
-				<orientation>horizontal</orientation>
+				<onleft>$PARAM[list_id]</onleft>
+				<orientation>horizontalRtl</orientation>
 				<movement>2</movement>
 				<include content="WidgetListCommonStacked">
 					<param name="list_id" value="$PARAM[list_id]"/>
@@ -1087,7 +1117,8 @@
 				<visible>$PARAM[visible]</visible>
 				<itemlayout width="448" height="550">
 					<control type="group">
-						<left>70</left>
+						<right>68</right>
+						<left>903r</left>
 						<top>5</top>
 						<include content="BigInfoWallEpisodeLayout">
 							<param name="focused" value="false" />
@@ -1102,7 +1133,8 @@
 				<focusedlayout width="448" height="550">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
-						<left>70</left>
+						<right>68</right>
+						<left>903r</left>
 						<top>5</top>
 						<include content="BigInfoWallEpisodeLayout">
 							<param name="focused" value="true" />
@@ -1142,7 +1174,8 @@
 				<top>110</top>
 				<right>0</right>
 				<height>195</height>
-				<onright>$PARAM[list_id]</onright>
+				<orientation>horizontalRtl</orientation>
+				<onleft>$PARAM[list_id]</onleft>
 				<movement>3</movement>
 				<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
 				<onfocus>Control.Move($PARAM[list_id],$INFO[Window(home).Property(listposition)])</onfocus>
@@ -1153,7 +1186,8 @@
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
 				<itemlayout width="337" height="340">
 					<control type="group">
-						<left>70</left>
+						<right>68</right>
+						<left>685r</left>
 						<control type="image">
 							<width>347</width>
 							<height>120</height>
@@ -1200,7 +1234,8 @@
 				<focusedlayout width="337" height="340">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
-						<left>70</left>
+						<right>68</right>
+						<left>685r</left>
 						<control type="image">
 							<include>FocusBounce</include>
 							<width>347</width>
@@ -1278,6 +1313,7 @@
 			<control type="fixedlist" id="$PARAM[list_id]">
 				<left>0</left>
 				<top>110</top>
+				<orientation>horizontalRtl</orientation>
 				<right>0</right>
 				<height>195</height>
 				<include content="WidgetListCommonStacked">
@@ -1287,7 +1323,8 @@
 				<visible>$PARAM[visible]</visible>
 				<itemlayout width="337" height="340">
 					<control type="group">
-						<left>70</left>
+						<right>68</right>
+						<left>685r</left>
 						<control type="image">
 							<width>347</width>
 							<height>120</height>
@@ -1320,7 +1357,8 @@
 				<focusedlayout width="337" height="340">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
-						<left>70</left>
+						<right>68</right>
+						<left>685r</left>
 						<control type="image">
 							<include>FocusBounce</include>
 							<width>347</width>
@@ -2097,8 +2135,8 @@
 	<include name="WidgetListCommon">
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
 		<orientation>horizontal</orientation>
-		<onleft>9000</onleft>
-		<onright>$PARAM[list_id]</onright>
+		<onright>9000</onright>
+		<onleft>$PARAM[list_id]</onleft>
 		<onback>SetFocus($PARAM[list_id],0,absolute)</onback>
 		<onback>9000</onback>
 		<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
@@ -2109,8 +2147,8 @@
 	<include name="WidgetListCommonStacked">
     <scrolltime tween="cubic" easing="out">500</scrolltime>
     <orientation>horizontal</orientation>
-    <onleft>9000</onleft>
-    <onright>$PARAM[list_id]</onright>
+    <onright>9000</onright>
+    <onleft>$PARAM[list_id]</onleft>
 		<onback>9000</onback>
     <onback>SetFocus($PARAM[list_id],0,absolute)</onback>
     <onfocus>RunScript(script.fentastic.helper,mode=widget_monitor&amp;list_id=$PARAM[list_id])</onfocus>
@@ -2124,7 +2162,7 @@
 		<definition>
 			<control type="group" id="$PARAM[list_id]599">
 				<height>160</height>
-				<left>$PARAM[posx]</left>
+				<left>$PARAM[posx]r</left>
 				<visible>Container($PARAM[list_id]).IsUpdating + !Integer.IsGreater(Container($PARAM[list_id]).NumItems,0)</visible>
 				<visible>$PARAM[visible]</visible>
 				<control type="image">
@@ -2152,7 +2190,7 @@
 		<definition>
 			<control type="group" id="$PARAM[list_id]599">
 				<height>160</height>
-				<left>55</left>
+				<left>55r</left>
 				<visible>Container($PARAM[list_id]).IsUpdating</visible>
 				<control type="image">
 					<top>$PARAM[posy]</top>

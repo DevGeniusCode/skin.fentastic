@@ -71,7 +71,7 @@
 					<visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(games)</visible>
 					<preloaditems>1</preloaditems>
 					<viewtype label="20021">icon</viewtype>
-
+					<focusposition>2</focusposition>
 					<!-- Defines the layout for each item in the list -->
 					<itemlayout width="215">
 						<control type="group">
