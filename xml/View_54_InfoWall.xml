@@ -1232,17 +1232,19 @@
 
 	<include name="View_54_InfoWall">
 		<control type="group">
-			<include>OpenClose_Right</include>
-			<left>80</left>
+			<include>OpenClose_Left</include>
+			<align>right</align>
+			<right>80</right>
 			<top>0</top>
 			<visible>Control.IsVisible(54)</visible>
-			<include>Visible_Right</include>
+			<include>Visible_Left</include>
 			<control type="panel" id="54">
-				<left>480</left>
-				<right>15</right>
+				<align>right</align>
+				<right>480</right>
+				<left>15</left>
 				<height>100%</height>
 				<onleft>9000</onleft>
-				<onright>531</onright>
+				<onleft>531</onleft>
 				<orientation>verticalRtl</orientation>
 				<onup condition="Integer.IsGreater(Container.NumPages,1)">54</onup>
 				<onup condition="!Integer.IsGreater(Container.NumPages,1)">9000</onup>

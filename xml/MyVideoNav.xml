@@ -32,10 +32,15 @@
 				<visible>Control.IsVisible(50) | Control.Isvisible(54) | Control.Isvisible(56) | [Control.IsVisible(501) + String.IsEqual(Skin.AspectRatio,21:9)]</visible>
 				<include>Visible_Left</include>
 				<include content="ContentPanel">
+					<param name="right" condition="Control.IsVisible(54)">30</param>
+					<param name="left" condition="Control.IsVisible(54)">580r</param>
+					<param name="flipx" condition="Control.IsVisible(54)">true</param>
 					<param name="width" value="1106" />
 				</include>
 				<control type="group">
 					<width>550</width>
+					<align condition="Control.IsVisible(54)">right</align>
+					<right condition="Control.IsVisible(54)">30</right>
 					<control type="image">
 						<left>30</left>
 						<top>120</top>
@@ -46,6 +51,7 @@
 					</control>
 					<control type="textbox">
 						<top>155</top>
+						<right condition="Control.IsVisible(54)">30</right>
 						<left>30</left>
 						<width>550</width>
 						<aligny>center</aligny>
@@ -54,7 +60,7 @@
 						<label>$INFO[ListItem.Label]</label>
 						
 						<!-- KODI-RD-IL ADDITION -->
-						<align>right</align>
+						<align>center</align>
 						<!-- ##################### -->
 						
 						<visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
@@ -148,7 +154,7 @@
 				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsVideoVar]" />
 			</include>
 			<include content="BottomBar">
-				<param name="info_visible" value="false" />
+				<param name="info_visible" value="true" />
 			</include>
 			<control type="group">
 				<depth>DepthBars</depth>

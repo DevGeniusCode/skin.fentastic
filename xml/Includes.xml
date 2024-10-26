@@ -1150,9 +1150,9 @@
 		</control>
 		<control type="label">
 			<!-- Show Title -->
-			<label> \ </label>
+			<label> [B]«[/B] </label>
 			<include>BreadcrumbsLabel</include>
-			<visible>Container.Content(episodes) | !String.IsEmpty(Container.ShowTitle) + !String.IsEqual(Container.ShowTitle,Container.FolderName)</visible>
+			<visible>!String.isempty(Container.PluginCategory)</visible>
 		</control>
 		<control type="label">
 			<!-- Show Title -->
@@ -1163,7 +1163,7 @@
 		<control type="label">
 			<label> [B]«[/B] </label>
 			<include>BreadcrumbsLabel</include>
-			<visible>!String.isempty(Container.PluginCategory)</visible>
+			<visible>Container.Content(episodes) | !String.IsEmpty(Container.ShowTitle) + !String.IsEqual(Container.ShowTitle,Container.FolderName)</visible>
 		</control>
 <!--		<control type="label">-->
 <!--			&lt;!&ndash; Folder Name &ndash;&gt;-->
@@ -1280,7 +1280,7 @@
 				<control type="group">
 				
 					<!-- KODI-RD-IL ADDITION -->
-					<!-- <left>1720</left> -->
+					 <left>1720</left>
 					<!-- ##################### -->
 					
 					<visible>$PARAM[info_visible]</visible>

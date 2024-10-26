@@ -1088,6 +1088,10 @@ msgctxt "#700031"
 msgid "Ended"
 msgstr ""
 
+msgctxt "#203431"
+msgid "TV Shows"
+msgstr ""
+
 # DialogSeekVideoOSD in Player - VideoOSD.XML
 
 # msgctxt "#700032"
